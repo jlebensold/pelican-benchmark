@@ -222,6 +222,17 @@ footer.foot a:hover{color:var(--amber-strong)}
 .agent:nth-child(6){animation-delay:.24s}
 .agent:nth-child(7){animation-delay:.28s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.nav-pill-extra{
+  display:inline-flex;align-items:center;
+  padding:6px 14px;margin-left:8px;
+  font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-decoration:none;font-weight:500;
+  background:var(--bone-100);border:1px solid var(--border);border-radius:999px;
+  white-space:nowrap;
+  transition:background .15s var(--ease), border-color .15s var(--ease), color .15s var(--ease);
+}
+.nav-pill-extra:hover{background:var(--white);border-color:var(--border-strong);color:var(--ink)}
+.nav-pill-extra::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lavender);margin-right:8px}
 </style>
 <meta name="description" content="Same v1 runbook handed to seven agent/model combinations. Speed × score scatter and side-by-side outputs.">
 <meta property="og:type" content="website">
@@ -255,6 +266,7 @@ footer.foot a:hover{color:var(--amber-strong)}
     <a class="active" href="/head-to-head">&#9314; head-to-head</a>
     <a href="/runbooks">&#9315; runbooks</a>
   </nav>
+<a href="/about" class="nav-pill-extra">about</a>
 </div>
 
 <a class="kicker" href="https://simonwillison.net/tags/pelican-riding-a-bicycle/" target="_blank" rel="noopener"><span class="kicker__dot">si</span><em>Inspired by</em> Simon Willison&rsquo;s <code>pelican-riding-a-bicycle</code> benchmark<span class="kicker__arr">&#x2197;</span></a>
