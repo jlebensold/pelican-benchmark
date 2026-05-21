@@ -210,9 +210,9 @@ footer.foot a:hover{color:var(--amber-strong)}
 <section class="progress-strip">
   <div>
     <div class="progress-strip__head">global progress</div>
-    <div class="progress-strip__num">24/71 trajectories</div>
+    <div class="progress-strip__num">25/71 trajectories</div>
   </div>
-  <div class="progress-strip__bar"><span style="width:33%"></span></div>
+  <div class="progress-strip__bar"><span style="width:35%"></span></div>
   <div style="text-align:right">
     <div class="progress-strip__peak">40/40<small>peak · gemini-cli</small></div>
   </div>
@@ -5852,11 +5852,11 @@ footer.foot a:hover{color:var(--amber-strong)}
           </div>
           <div class="r-panel__meta">
             <span class="r-panel__stat"><b>—</b> best</span>
-            <span class="r-panel__stat">1/10 rounds</span>
+            <span class="r-panel__stat">2/10 rounds</span>
           </div>
           <button class="r-panel__close" type="button" aria-label="Close">&#x2715;</button>
         </header>
-        <div class="r-strip r-strip--1">
+        <div class="r-strip r-strip--2">
             <figure class="r-frame r-frame--none">
               <div class="r-frame__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <defs>
@@ -6182,6 +6182,454 @@ footer.foot a:hover{color:var(--amber-strong)}
 </svg></div>
               <figcaption>
                 <span class="r-frame__lbl">v1</span>
+                <span class="r-frame__sc">—</span>
+              </figcaption>
+            </figure>
+            <figure class="r-frame r-frame--none">
+              <div class="r-frame__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5BA8D4"/>
+      <stop offset="60%" stop-color="#A8D8F0"/>
+      <stop offset="100%" stop-color="#D0EEFF"/>
+    </linearGradient>
+    <!-- Ground -->
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6AAA3A"/>
+      <stop offset="100%" stop-color="#3D7A1A"/>
+    </linearGradient>
+    <!-- Body -->
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#F2F2EA"/>
+      <stop offset="100%" stop-color="#C8C8BC"/>
+    </linearGradient>
+    <!-- Wing -->
+    <linearGradient id="wingGrad" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#AAAAA0"/>
+      <stop offset="50%" stop-color="#C8C8BE"/>
+      <stop offset="100%" stop-color="#AAAAA0"/>
+    </linearGradient>
+    <!-- Pouch -->
+    <linearGradient id="pouchGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0A820"/>
+      <stop offset="100%" stop-color="#D07810"/>
+    </linearGradient>
+    <!-- Bill -->
+    <linearGradient id="billGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E89820"/>
+      <stop offset="100%" stop-color="#F5B020"/>
+    </linearGradient>
+    <!-- Frame -->
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EF5350"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </linearGradient>
+    <!-- Leg -->
+    <linearGradient id="legGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4A010"/>
+      <stop offset="100%" stop-color="#E8C030"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ========== BACKGROUND ========== -->
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+
+  <!-- Distant hills -->
+  <ellipse cx="150" cy="520" rx="200" ry="50" fill="#4A8A28" opacity="0.4"/>
+  <ellipse cx="650" cy="520" rx="220" ry="55" fill="#4A8A28" opacity="0.35"/>
+
+  <!-- Ground -->
+  <rect x="0" y="505" width="800" height="95" fill="url(#groundGrad)"/>
+  <!-- Road surface -->
+  <path d="M0,505 Q400,498 800,505 L800,520 Q400,513 0,520 Z" fill="#8D8D8D" opacity="0.6"/>
+  <!-- Road center line -->
+  <line x1="0" y1="512" x2="800" y2="512" stroke="#E0E000" stroke-width="2" stroke-dasharray="30,20" opacity="0.5"/>
+
+  <!--
+    ===== CAREFULLY MEASURED LAYOUT =====
+
+    BICYCLE:
+    - Wheel radius: 88px
+    - Rear wheel center: (218, 490)   → bottom at y=578 (below ground line 505 is OK for shadow)
+    - Front wheel center: (518, 490)
+    - Bottom bracket: (368, 418)
+    - Seat tube top junction: (305, 298)
+    - Saddle post tip: (298, 258)
+    - SADDLE top: y=250 (pelican sits here)
+    - Head tube center: (492, 290)
+    - Handlebar stem top: (490, 248)
+    - Handlebar grips: LEFT=(458,272)  RIGHT=(522,272)
+
+    PEDALS:
+    - Forward-down (right foot): crank angle ~40° forward → (405,455)
+    - Back-up (left foot): crank angle ~40° backward → (330,380)
+
+    PELICAN:
+    - Body center: (340, 222)  ry=68  → bottom of body at y=290
+    - Saddle at y=250 → body bottom OVERLAPS saddle (40px overlap) ✓
+    - Rump clearly planted on saddle
+    - Neck: curves from (380,185) toward head
+    - Head center: (478,148)
+    - Wing L tip: reaches (458,272) = left grip ✓
+    - Wing R tip: reaches (522,272) = right grip ✓
+    - Right foot: at (405,455) on right pedal ✓
+    - Left foot: at (330,380) on left pedal ✓
+  -->
+
+  <!-- ========== BICYCLE ========== -->
+
+  <!-- REAR WHEEL -->
+  <circle cx="218" cy="490" r="88" fill="none" stroke="#1A1A1A" stroke-width="9"/>
+  <!-- Tire detail -->
+  <circle cx="218" cy="490" r="81" fill="none" stroke="#2A2A2A" stroke-width="3" stroke-dasharray="6,3" opacity="0.3"/>
+  <!-- Hub -->
+  <circle cx="218" cy="490" r="12" fill="#555" stroke="#222" stroke-width="3"/>
+  <circle cx="218" cy="490" r="5" fill="#888"/>
+  <!-- Spokes -->
+  <g stroke="#888" stroke-width="1.8" opacity="0.85">
+    <line x1="218" y1="490" x2="218" y2="402"/>
+    <line x1="218" y1="490" x2="218" y2="578"/>
+    <line x1="218" y1="490" x2="306" y2="490"/>
+    <line x1="218" y1="490" x2="130" y2="490"/>
+    <line x1="218" y1="490" x2="280" y2="428"/>
+    <line x1="218" y1="490" x2="156" y2="552"/>
+    <line x1="218" y1="490" x2="280" y2="552"/>
+    <line x1="218" y1="490" x2="156" y2="428"/>
+    <line x1="218" y1="490" x2="240" y2="403"/>
+    <line x1="218" y1="490" x2="196" y2="577"/>
+    <line x1="218" y1="490" x2="305" y2="468"/>
+    <line x1="218" y1="490" x2="131" y2="512"/>
+    <line x1="218" y1="490" x2="300" y2="513"/>
+    <line x1="218" y1="490" x2="136" y2="467"/>
+    <line x1="218" y1="490" x2="241" y2="577"/>
+    <line x1="218" y1="490" x2="195" y2="403"/>
+  </g>
+
+  <!-- FRONT WHEEL -->
+  <circle cx="518" cy="490" r="88" fill="none" stroke="#1A1A1A" stroke-width="9"/>
+  <circle cx="518" cy="490" r="81" fill="none" stroke="#2A2A2A" stroke-width="3" stroke-dasharray="6,3" opacity="0.3"/>
+  <circle cx="518" cy="490" r="12" fill="#555" stroke="#222" stroke-width="3"/>
+  <circle cx="518" cy="490" r="5" fill="#888"/>
+  <g stroke="#888" stroke-width="1.8" opacity="0.85">
+    <line x1="518" y1="490" x2="518" y2="402"/>
+    <line x1="518" y1="490" x2="518" y2="578"/>
+    <line x1="518" y1="490" x2="606" y2="490"/>
+    <line x1="518" y1="490" x2="430" y2="490"/>
+    <line x1="518" y1="490" x2="580" y2="428"/>
+    <line x1="518" y1="490" x2="456" y2="552"/>
+    <line x1="518" y1="490" x2="580" y2="552"/>
+    <line x1="518" y1="490" x2="456" y2="428"/>
+    <line x1="518" y1="490" x2="540" y2="403"/>
+    <line x1="518" y1="490" x2="496" y2="577"/>
+    <line x1="518" y1="490" x2="605" y2="468"/>
+    <line x1="518" y1="490" x2="431" y2="512"/>
+    <line x1="518" y1="490" x2="600" y2="513"/>
+    <line x1="518" y1="490" x2="436" y2="467"/>
+    <line x1="518" y1="490" x2="541" y2="577"/>
+    <line x1="518" y1="490" x2="495" y2="403"/>
+  </g>
+
+  <!-- FRAME (draw behind pelican body) -->
+  <!-- Chain stay: rear hub → BB -->
+  <line x1="218" y1="490" x2="368" y2="418" stroke="#D32F2F" stroke-width="10" stroke-linecap="round"/>
+  <!-- Seat stay: rear hub → seat junction -->
+  <line x1="218" y1="490" x2="305" y2="298" stroke="#D32F2F" stroke-width="8" stroke-linecap="round"/>
+  <!-- Seat tube: BB → seat junction -->
+  <line x1="368" y1="418" x2="305" y2="298" stroke="#D32F2F" stroke-width="10" stroke-linecap="round"/>
+  <!-- Top tube: seat junction → head tube -->
+  <line x1="305" y1="298" x2="492" y2="288" stroke="#D32F2F" stroke-width="10" stroke-linecap="round"/>
+  <!-- Down tube: head tube → BB -->
+  <line x1="492" y1="288" x2="368" y2="418" stroke="#D32F2F" stroke-width="10" stroke-linecap="round"/>
+  <!-- Fork leg: head tube → front hub -->
+  <line x1="492" y1="288" x2="518" y2="490" stroke="#D32F2F" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Head tube -->
+  <rect x="484" y="278" width="18" height="40" rx="6" fill="#C62828" stroke="#7B0000" stroke-width="2.5"/>
+
+  <!-- Bottom bracket -->
+  <circle cx="368" cy="418" r="14" fill="#B71C1C" stroke="#7B0000" stroke-width="2"/>
+
+  <!-- Chainring -->
+  <circle cx="368" cy="418" r="32" fill="none" stroke="#FFA000" stroke-width="5"/>
+  <circle cx="368" cy="418" r="24" fill="none" stroke="#FFA000" stroke-width="2.5" opacity="0.6"/>
+  <circle cx="368" cy="418" r="35" fill="none" stroke="#FFA000" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+
+  <!-- Cranks -->
+  <line x1="368" y1="418" x2="405" y2="455" stroke="#4A4A4A" stroke-width="8" stroke-linecap="round"/>
+  <line x1="368" y1="418" x2="330" y2="380" stroke="#4A4A4A" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- PEDALS — large, obvious rectangles with grip texture -->
+  <!-- Right pedal (forward-down) at (405,455) -->
+  <rect x="388" y="449" width="36" height="12" rx="3" fill="#2A2A2A" stroke="#111" stroke-width="2" transform="rotate(20,405,455)"/>
+  <line x1="393" y1="451" x2="393" y2="459" stroke="#555" stroke-width="1" transform="rotate(20,405,455)" opacity="0.5"/>
+  <line x1="400" y1="451" x2="400" y2="459" stroke="#555" stroke-width="1" transform="rotate(20,405,455)" opacity="0.5"/>
+  <line x1="407" y1="451" x2="407" y2="459" stroke="#555" stroke-width="1" transform="rotate(20,405,455)" opacity="0.5"/>
+  <line x1="414" y1="451" x2="414" y2="459" stroke="#555" stroke-width="1" transform="rotate(20,405,455)" opacity="0.5"/>
+
+  <!-- Left pedal (back-up) at (330,380) -->
+  <rect x="314" y="374" width="36" height="12" rx="3" fill="#2A2A2A" stroke="#111" stroke-width="2" transform="rotate(-20,330,380)"/>
+  <line x1="319" y1="376" x2="319" y2="384" stroke="#555" stroke-width="1" transform="rotate(-20,330,380)" opacity="0.5"/>
+  <line x1="326" y1="376" x2="326" y2="384" stroke="#555" stroke-width="1" transform="rotate(-20,330,380)" opacity="0.5"/>
+  <line x1="333" y1="376" x2="333" y2="384" stroke="#555" stroke-width="1" transform="rotate(-20,330,380)" opacity="0.5"/>
+  <line x1="340" y1="376" x2="340" y2="384" stroke="#555" stroke-width="1" transform="rotate(-20,330,380)" opacity="0.5"/>
+
+  <!-- Chain -->
+  <path d="M368,418 Q385,435 405,452" fill="none" stroke="#999" stroke-width="4" stroke-dasharray="5,3" opacity="0.55"/>
+  <path d="M218,490 Q295,455 358,420" fill="none" stroke="#999" stroke-width="4" stroke-dasharray="5,3" opacity="0.55"/>
+
+  <!-- Seat post -->
+  <line x1="305" y1="298" x2="298" y2="258" stroke="#5A5A5A" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- SADDLE — clearly defined, pelican will sit ON this -->
+  <!-- Main saddle shape -->
+  <path d="M268,252 Q282,244 300,247 Q318,250 340,248 Q356,248 364,253
+           Q360,262 342,266 Q320,270 300,268 Q280,266 266,260 Z"
+        fill="#3E2723" stroke="#1A0000" stroke-width="2.5"/>
+  <!-- Saddle top surface highlight -->
+  <path d="M274,252 Q295,246 318,248 Q340,248 356,253"
+        fill="none" stroke="#6D4C41" stroke-width="2.5" opacity="0.6"/>
+  <!-- Saddle nose (forward point) -->
+  <path d="M356,248 Q368,248 373,253 Q369,259 362,260 Q356,258 356,253 Z"
+        fill="#4E342E" stroke="#1A0000" stroke-width="1.5"/>
+
+  <!-- Handlebars -->
+  <!-- Stem -->
+  <line x1="490" y1="278" x2="490" y2="250" stroke="#5A5A5A" stroke-width="8" stroke-linecap="round"/>
+  <!-- Cross bar -->
+  <line x1="456" y1="250" x2="524" y2="250" stroke="#5A5A5A" stroke-width="8" stroke-linecap="round"/>
+  <!-- Drop-bar curves down to grips at (458,272) and (522,272) -->
+  <path d="M456,250 Q448,260 447,272 Q447,280 454,283" fill="none" stroke="#3A3A3A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M524,250 Q532,260 533,272 Q533,280 526,283" fill="none" stroke="#3A3A3A" stroke-width="10" stroke-linecap="round"/>
+  <!-- Grip caps -->
+  <circle cx="454" cy="283" r="7" fill="#111" stroke="#333" stroke-width="1.5"/>
+  <circle cx="526" cy="283" r="7" fill="#111" stroke="#333" stroke-width="1.5"/>
+  <!-- Grip tape texture -->
+  <path d="M448,262 Q447,272 450,280" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="3,2" opacity="0.4"/>
+  <path d="M532,262 Q533,272 530,280" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="3,2" opacity="0.4"/>
+
+  <!-- ========== PELICAN ========== -->
+
+  <!-- TAIL FEATHERS (behind body, sticking back-downward) -->
+  <path d="M258,268 Q242,282 232,300 Q225,316 232,326 Q244,330 258,318
+           Q272,305 280,288 Q284,278 278,268 Z"
+        fill="#D0D0C5" stroke="#B0B0A0" stroke-width="1.5"/>
+  <!-- Tail feather quill lines -->
+  <line x1="232" y1="326" x2="270" y2="278" stroke="#B8B8A8" stroke-width="1" opacity="0.6"/>
+  <line x1="236" y1="322" x2="274" y2="274" stroke="#B8B8A8" stroke-width="1" opacity="0.6"/>
+  <line x1="241" y1="316" x2="278" y2="270" stroke="#B8B8A8" stroke-width="1" opacity="0.6"/>
+
+  <!-- LEFT WING — body-attached, extends outward left, curves down & forward
+       Inner portion runs OVER the handlebars with tip touching left grip (454,283) -->
+  <!-- Outer wing blade (left) -->
+  <path d="M295,215 Q262,202 235,210 Q208,218 196,238 Q190,252 198,264
+           Q210,272 232,266 Q258,258 280,248 Q292,242 296,232 Z"
+        fill="#C0C0B2" stroke="#A0A090" stroke-width="1.5"/>
+  <!-- Wing primary feather tips -->
+  <path d="M197,250 Q191,262 197,270" fill="none" stroke="#909080" stroke-width="1.5" opacity="0.7"/>
+  <path d="M204,256 Q198,267 204,274" fill="none" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <path d="M212,260 Q208,270 213,277" fill="none" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <!-- Inner wing connecting to handlebar — medium-thick stroke representing folded inner wing -->
+  <path d="M296,232 Q312,240 332,248 Q360,255 392,260 Q418,263 440,266 Q452,268 458,272 Q458,280 454,283"
+        fill="none" stroke="#C8C8BA" stroke-width="13" stroke-linecap="round"/>
+  <!-- Wing tip pad on left grip -->
+  <ellipse cx="454" cy="283" rx="12" ry="9" fill="#B0B0A2" stroke="#909088" stroke-width="2"/>
+
+  <!-- BODY — large, centered so BOTTOM (at y=290) sits on saddle top (at ~y=250) -->
+  <!-- Body center at (340,222), ry=68 → bottom at y=290 overlaps saddle top y=252 -->
+  <ellipse cx="340" cy="222" rx="82" ry="68" fill="url(#bodyGrad)" stroke="#C0C0B2" stroke-width="2.5"/>
+
+  <!-- Breast lighter area -->
+  <ellipse cx="354" cy="238" rx="56" ry="50" fill="#F5F5EE" stroke="none"/>
+  <!-- Body marking — subtle gray mantle on back -->
+  <path d="M262,195 Q285,182 320,185 Q340,187 360,195 Q350,205 335,208 Q310,210 290,205 Q272,202 262,195 Z"
+        fill="#C8C8BC" stroke="none" opacity="0.6"/>
+
+  <!-- RUMP sits on SADDLE — clear contact zone -->
+  <!-- Draw rump feathers draping over and partly behind saddle -->
+  <path d="M262,276 Q272,284 290,290 Q308,295 330,294 Q352,293 368,288 Q382,282 388,274"
+        fill="#D8D8CE" stroke="#B8B8AC" stroke-width="1.5"/>
+  <!-- "Sitting" impression: slight body squash at saddle level -->
+  <path d="M275,272 Q295,280 320,283 Q342,284 362,280 Q376,275 384,268"
+        fill="none" stroke="#C8C8BC" stroke-width="3" opacity="0.5"/>
+
+  <!-- RIGHT WING — folds forward, tip touching right grip (526,283) -->
+  <path d="M384,200 Q418,185 456,182 Q490,180 518,190 Q535,198 538,210
+           Q538,224 528,230 Q512,236 488,232 Q462,226 440,222
+           Q414,218 392,218 Q380,218 378,210 Z"
+        fill="#C0C0B2" stroke="#A0A090" stroke-width="1.5"/>
+  <!-- Right wing feather markings -->
+  <line x1="518" y1="190" x2="520" y2="218" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <line x1="502" y1="183" x2="503" y2="212" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <line x1="486" y1="181" x2="486" y2="210" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <line x1="470" y1="181" x2="469" y2="210" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <line x1="454" y1="182" x2="452" y2="210" stroke="#909080" stroke-width="1.2" opacity="0.6"/>
+  <!-- Inner right wing connecting to grip -->
+  <path d="M380,210 Q380,225 382,238 Q386,252 398,262 Q415,272 438,276 Q460,278 526,283"
+        fill="none" stroke="#C8C8BA" stroke-width="13" stroke-linecap="round"/>
+  <!-- Right wing tip pad on right grip -->
+  <ellipse cx="526" cy="283" rx="12" ry="9" fill="#B0B0A2" stroke="#909088" stroke-width="2"/>
+
+  <!-- NECK — strong thick curve from body front up to head -->
+  <!-- Neck base at body front (~392,185), neck curves up-right to head -->
+  <path d="M392,178 Q418,158 442,148 Q458,142 472,140"
+        fill="none" stroke="#E5E5DC" stroke-width="34" stroke-linecap="round"/>
+  <!-- Neck shadow/shading on one side -->
+  <path d="M392,178 Q418,158 442,148 Q458,142 472,140"
+        fill="none" stroke="#C8C8BE" stroke-width="22" stroke-linecap="round" opacity="0.35"/>
+  <!-- Neck front edge detail -->
+  <path d="M396,182 Q420,163 444,152 Q460,145 474,143"
+        fill="none" stroke="#F0F0E8" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- HEAD -->
+  <ellipse cx="478" cy="133" rx="32" ry="28" fill="#EEEEE5" stroke="#C8C8BA" stroke-width="2"/>
+  <!-- Crown crest -->
+  <path d="M458,110 Q462,98 470,94 Q478,90 480,98 Q478,108 472,112 Q465,114 458,110 Z"
+        fill="#E0E0D5" stroke="#C0C0B0" stroke-width="1.5"/>
+
+  <!-- EYE — large, expressive -->
+  <circle cx="490" cy="128" r="10" fill="#FDD835" stroke="#2A2A2A" stroke-width="2"/>
+  <circle cx="491" cy="128" r="5.5" fill="#0D1642"/>
+  <circle cx="494" cy="125" r="2" fill="white"/>
+  <!-- Orbital ring (brown/orange) -->
+  <circle cx="490" cy="128" r="10" fill="none" stroke="#E65100" stroke-width="1.5" opacity="0.55"/>
+
+  <!-- UPPER MANDIBLE — long, slightly hooked at tip -->
+  <path d="M504,136 Q552,130 602,132 Q622,133 626,137 Q624,144 620,145
+           Q616,148 612,147 Q600,146 552,144 Q504,143 504,143 Z"
+        fill="url(#billGrad)" stroke="#B07A10" stroke-width="1.5"/>
+  <!-- Bill ridge line -->
+  <line x1="505" y1="139" x2="618" y2="138" stroke="#906810" stroke-width="1.2" opacity="0.5"/>
+  <!-- Bill hook detail -->
+  <path d="M622,137 Q630,138 632,142 Q630,148 622,147" fill="#E08010" stroke="#A06010" stroke-width="1.2"/>
+  <!-- Nostril groove -->
+  <path d="M522,133 Q532,131 540,133 Q538,137 528,138 Q520,137 522,133 Z" fill="none" stroke="#906810" stroke-width="1" opacity="0.4"/>
+
+  <!-- LOWER MANDIBLE + ICONIC THROAT POUCH -->
+  <!-- The expandable lower jaw + pouch -->
+  <path d="M504,143 Q515,152 526,172 Q535,192 533,212
+           Q530,228 520,238 Q508,246 496,242
+           Q484,237 480,222 Q476,206 478,188
+           Q480,170 490,156 Q497,148 504,143 Z"
+        fill="url(#pouchGrad)" stroke="#B07010" stroke-width="2"/>
+  <!-- Pouch distension lines (horizontal) -->
+  <line x1="496" y1="162" x2="524" y2="168" stroke="#C07818" stroke-width="1" opacity="0.45"/>
+  <line x1="492" y1="175" x2="525" y2="183" stroke="#C07818" stroke-width="1" opacity="0.45"/>
+  <line x1="489" y1="190" x2="524" y2="197" stroke="#C07818" stroke-width="1" opacity="0.45"/>
+  <line x1="486" y1="205" x2="523" y2="210" stroke="#C07818" stroke-width="1" opacity="0.45"/>
+  <line x1="483" y1="218" x2="518" y2="222" stroke="#C07818" stroke-width="1" opacity="0.45"/>
+  <!-- Pouch highlight -->
+  <path d="M505,148 Q516,158 524,178 Q530,198 526,218"
+        fill="none" stroke="#F5C040" stroke-width="2.5" opacity="0.3"/>
+
+  <!-- ========== LEGS ========== -->
+
+  <!-- LEFT LEG → left pedal at (330,380) -->
+  <!-- Upper thigh (from body lower-left) -->
+  <path d="M304,278 Q310,308 316,335 Q320,355 326,375"
+        fill="none" stroke="url(#legGrad)" stroke-width="12" stroke-linecap="round"/>
+  <!-- Leg shading -->
+  <path d="M304,278 Q310,308 316,335 Q320,355 326,375"
+        fill="none" stroke="#906808" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <!-- Left knee bump -->
+  <circle cx="320" cy="352" rx="10" ry="10" r="10" fill="#C8A010" stroke="#906800" stroke-width="2"/>
+  <!-- Lower left leg -->
+  <path d="M320,352 Q322,362 326,375" fill="none" stroke="#C8A010" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- LEFT FOOT — webbed, clearly ON left pedal -->
+  <!-- Foot body centered on pedal -->
+  <ellipse cx="332" cy="378" rx="24" ry="10" fill="#C09010" stroke="#806000" stroke-width="2" transform="rotate(-15,332,378)"/>
+  <!-- Webbed toe spread (3 toes, fanned left) -->
+  <path d="M320,373 Q310,366 304,367 Q300,371 307,375 Q316,377 323,374 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <path d="M318,378 Q308,376 302,380 Q300,385 308,386 Q317,385 322,381 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <path d="M322,383 Q312,385 308,390 Q308,395 316,394 Q324,391 325,386 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <!-- Contact emphasis: foot overlapping pedal -->
+  <rect x="314" y="372" width="36" height="12" rx="3" fill="none" stroke="#FFD700" stroke-width="2"
+        transform="rotate(-20,330,378)" opacity="0.65"/>
+
+  <!-- RIGHT LEG → right pedal at (405,455) -->
+  <path d="M370,278 Q378,330 386,378 Q393,412 403,450"
+        fill="none" stroke="url(#legGrad)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M370,278 Q378,330 386,378 Q393,412 403,450"
+        fill="none" stroke="#906808" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <!-- Right knee bump -->
+  <circle cx="388" cy="385" rx="10" ry="10" r="10" fill="#C8A010" stroke="#906800" stroke-width="2"/>
+  <!-- Lower right leg -->
+  <path d="M388,385 Q395,415 403,450" fill="none" stroke="#C8A010" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- RIGHT FOOT — ON right pedal -->
+  <ellipse cx="408" cy="453" rx="24" ry="10" fill="#C09010" stroke="#806000" stroke-width="2" transform="rotate(15,408,453)"/>
+  <!-- Webbed toes (right, spreading right-forward) -->
+  <path d="M419,447 Q429,440 435,441 Q439,445 433,449 Q424,451 418,449 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <path d="M421,452 Q431,450 437,454 Q439,459 431,460 Q421,459 417,455 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <path d="M416,456 Q424,459 427,465 Q425,469 418,467 Q412,463 412,458 Z"
+        fill="#B08010" stroke="#806000" stroke-width="1.5"/>
+  <!-- Contact emphasis -->
+  <rect x="388" y="447" width="36" height="12" rx="3" fill="none" stroke="#FFD700" stroke-width="2"
+        transform="rotate(20,405,453)" opacity="0.65"/>
+
+  <!-- ========== DECORATIONS ========== -->
+
+  <!-- Speed lines (motion) -->
+  <g stroke="#90CAF9" stroke-width="2.5" opacity="0.45" stroke-linecap="round">
+    <line x1="75" y1="410" x2="20" y2="410"/>
+    <line x1="88" y1="425" x2="38" y2="425"/>
+    <line x1="95" y1="440" x2="50" y2="440"/>
+    <line x1="82" y1="455" x2="32" y2="455"/>
+    <line x1="70" y1="468" x2="25" y2="468"/>
+  </g>
+
+  <!-- Wheel shadow/ground contact -->
+  <ellipse cx="218" cy="506" rx="88" ry="8" fill="#2A2A2A" opacity="0.18"/>
+  <ellipse cx="518" cy="506" rx="88" ry="8" fill="#2A2A2A" opacity="0.18"/>
+
+  <!-- Sun with rays -->
+  <circle cx="698" cy="65" r="40" fill="#FDD835" opacity="0.95"/>
+  <g stroke="#FDD835" stroke-width="3.5" opacity="0.6" stroke-linecap="round">
+    <line x1="698" y1="15" x2="698" y2="2"/>
+    <line x1="698" y1="115" x2="698" y2="128"/>
+    <line x1="648" y1="65" x2="635" y2="65"/>
+    <line x1="748" y1="65" x2="761" y2="65"/>
+    <line x1="663" y1="30" x2="654" y2="21"/>
+    <line x1="733" y1="100" x2="742" y2="109"/>
+    <line x1="733" y1="30" x2="742" y2="21"/>
+    <line x1="663" y1="100" x2="654" y2="109"/>
+  </g>
+
+  <!-- Cloud 1 -->
+  <g fill="white" opacity="0.9">
+    <ellipse cx="115" cy="72" rx="58" ry="28"/>
+    <ellipse cx="158" cy="60" rx="52" ry="26"/>
+    <ellipse cx="82" cy="67" rx="40" ry="21"/>
+  </g>
+  <!-- Cloud 2 -->
+  <g fill="white" opacity="0.8">
+    <ellipse cx="560" cy="88" rx="50" ry="24"/>
+    <ellipse cx="598" cy="78" rx="44" ry="20"/>
+    <ellipse cx="532" cy="83" rx="34" ry="18"/>
+  </g>
+  <!-- Cloud 3 (small) -->
+  <g fill="white" opacity="0.7">
+    <ellipse cx="350" cy="45" rx="35" ry="16"/>
+    <ellipse cx="372" cy="38" rx="28" ry="13"/>
+    <ellipse cx="330" cy="41" rx="22" ry="12"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="556" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="18" fill="#2E5A0E" font-style="italic" font-weight="bold" opacity="0.88">
+    A Pelican Rides the Open Road
+  </text>
+
+</svg></div>
+              <figcaption>
+                <span class="r-frame__lbl">v2</span>
                 <span class="r-frame__sc">—</span>
               </figcaption>
             </figure></div>
@@ -9431,11 +9879,11 @@ footer.foot a:hover{color:var(--amber-strong)}
 </svg></div>
         <dl class="agent__stats">
           <div><dt>best score</dt><dd class="agent__score agent__score--none">—</dd></div>
-          <div><dt>completed</dt><dd>1/10</dd></div>
-          <div class="agent__stats__id"><dt>progress</dt><dd><div class="bar"><span style="width:10%"></span></div><span class="bar__lbl">1/10 rounds · still running</span></dd></div>
+          <div><dt>completed</dt><dd>2/10</dd></div>
+          <div class="agent__stats__id"><dt>progress</dt><dd><div class="bar"><span style="width:20%"></span></div><span class="bar__lbl">2/10 rounds · still running</span></dd></div>
         </dl>
         <p class="agent__blurb">Hermes routed to Sonnet via OpenRouter. Same agent as the flash & glm rows — isolates model effect.</p>
-        <div class="agent__cta">see all 1 rounds &rarr;</div>
+        <div class="agent__cta">see all 2 rounds &rarr;</div>
       </article>
       <article class="agent agent--high" data-agent="hermes-flash" tabindex="0" role="button" aria-label="Expand hermes openrouter/google/gemini-3.5-flash rounds">
         <header class="agent__head">
