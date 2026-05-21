@@ -6,7 +6,7 @@
 <title>Head-to-Head &middot; Pelican-on-Bicycle SVG &middot; 7 agents, 1 runbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 window.__JETTY_PH_KEY = 'phc_rCJ78NfAP5btEIsP9gNRjPD4xPmSzv95INSSYGfMRYE';
@@ -42,7 +42,7 @@ window.__JETTY_PH_PAGE = 'viz-3-head-to-head';
   --r-sm:4px; --r-md:10px; --r-lg:16px;
   --f-display:'Outfit', system-ui, sans-serif;
   --f-body:'Nunito Sans', system-ui, sans-serif;
-  --f-mono:'Geist Mono', 'JetBrains Mono', monospace;
+  --f-mono:'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
   --ease:cubic-bezier(0.22, 1, 0.36, 1);
 }
 *{box-sizing:border-box;min-width:0}
@@ -87,7 +87,7 @@ h1 em{font-style:normal;color:var(--lavender);font-weight:500}
 @media(max-width:980px){.scatter-grid{grid-template-columns:1fr}}
 .scatter-box{position:relative;height:380px}
 .scatter-takeaway{background:var(--bone-100);border-radius:var(--r-md);padding:22px;border:1px solid var(--border)}
-.scatter-takeaway h4{font-family:var(--f-display);font-weight:600;color:var(--ink);margin:0 0 10px;font-size:16px;letter-spacing:-.01em}
+.scatter-takeaway h3{font-family:var(--f-display);font-weight:600;color:var(--ink);margin:0 0 10px;font-size:16px;letter-spacing:-.01em}
 .scatter-takeaway p{margin:0 0 8px;color:var(--stone-700);font-size:14px;line-height:1.55}
 .scatter-takeaway p b{color:var(--ink)}
 .scatter-legend{display:flex;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-dim);margin-bottom:12px}
@@ -284,7 +284,7 @@ footer.foot a:hover{color:var(--amber-strong)}
       <div class="scatter-legend">
         <span class="peak">peak</span><span class="high">high</span><span class="mid">mid</span><span class="low">baseline</span>
       </div>
-      <h4>Top-left is the sweet spot &mdash; high score, low time.</h4>
+      <h3>Top-left is the sweet spot &mdash; high score, low time.</h3>
       <p><b>gemini-cli</b> and <b>opencode</b> sit there but their judge is generous (Flash hands out 10/10 freely). Treat their scores as an upper bound, not a leaderboard.</p>
       <p>The clean comparison is <b>same agent, different model</b>: hermes climbs from 34 (sonnet) to 39 (flash) on the same runbook. <b>Model choice matters more than agent choice.</b></p>
     </aside>
@@ -2658,7 +2658,7 @@ const SCATTER = [{"x": 6.88, "y": 31, "label": "claude-code \u00b7 claude-sonnet
 const INK='#0a1230', INK_DIM='#5e6584', AMBER='#f0a91f', LAV='#7c5fd9', STONE='#44403c';
 const tierColor = t => t==='peak' ? LAV : t==='high' ? AMBER : t==='mid' ? INK : STONE;
 
-Chart.defaults.font.family = "'Geist Mono', monospace";
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
 Chart.defaults.color = INK_DIM;
 
 const ds = SCATTER.map(p => ({
@@ -2676,15 +2676,15 @@ new Chart(document.getElementById('sc'), {
     scales:{
       x: {
         min:2, max:8,
-        title:{display:true, text:'DURATION (min) — lower is faster', color:INK_DIM, font:{family:"'Geist Mono', monospace", size:10, weight:'600'}},
+        title:{display:true, text:'DURATION (min) — lower is faster', color:INK_DIM, font:{family:"'JetBrains Mono', monospace", size:10, weight:'600'}},
         grid:{color:'rgba(10,18,48,0.06)', drawTicks:false}, border:{display:false},
-        ticks:{stepSize:1, padding:8, font:{family:"'Geist Mono', monospace", size:11}}
+        ticks:{stepSize:1, padding:8, font:{family:"'JetBrains Mono', monospace", size:11}}
       },
       y: {
         min:28, max:42,
-        title:{display:true, text:'SELF-SCORE / 40 — higher is better', color:INK_DIM, font:{family:"'Geist Mono', monospace", size:10, weight:'600'}},
+        title:{display:true, text:'SELF-SCORE / 40 — higher is better', color:INK_DIM, font:{family:"'JetBrains Mono', monospace", size:10, weight:'600'}},
         grid:{color:'rgba(10,18,48,0.06)', drawTicks:false}, border:{display:false},
-        ticks:{stepSize:2, padding:8, font:{family:"'Geist Mono', monospace", size:11}}
+        ticks:{stepSize:2, padding:8, font:{family:"'JetBrains Mono', monospace", size:11}}
       }
     },
     plugins:{
@@ -2692,7 +2692,7 @@ new Chart(document.getElementById('sc'), {
       tooltip:{
         backgroundColor: INK, titleColor:'#fde8b8', bodyColor:'#faf8f3',
         padding:10, cornerRadius:4, displayColors:false,
-        titleFont:{family:"'Outfit'", weight:'600', size:13}, bodyFont:{family:"'Geist Mono', monospace", size:11},
+        titleFont:{family:"'Outfit'", weight:'600', size:13}, bodyFont:{family:"'JetBrains Mono', monospace", size:11},
         callbacks:{ title: items => items[0].raw.name, label: c => `${c.parsed.x.toFixed(1)} min · ${c.parsed.y}/40` }
       }
     }
@@ -2702,7 +2702,7 @@ new Chart(document.getElementById('sc'), {
     afterDatasetsDraw(chart) {
       const ctx = chart.ctx;
       ctx.save();
-      ctx.font = "600 11px 'Geist Mono', monospace";
+      ctx.font = "600 11px 'JetBrains Mono', monospace";
       ctx.fillStyle = INK;
       ctx.textAlign = 'left';
       chart.data.datasets.forEach((ds, i) => {

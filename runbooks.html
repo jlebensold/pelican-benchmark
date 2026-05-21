@@ -6,7 +6,7 @@
 <title>Runbook Diff &middot; Pelican-on-Bicycle SVG &middot; v1&hellip;v10</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js"></script>
 <script>
 window.__JETTY_PH_KEY = 'phc_rCJ78NfAP5btEIsP9gNRjPD4xPmSzv95INSSYGfMRYE';
@@ -52,7 +52,7 @@ window.__JETTY_PH_PAGE = 'viz-4-runbooks';
   --r-sm:4px; --r-md:10px; --r-lg:16px;
   --f-display:'Outfit', system-ui, sans-serif;
   --f-body:'Nunito Sans', system-ui, sans-serif;
-  --f-mono:'Geist Mono', 'JetBrains Mono', monospace;
+  --f-mono:'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
 }
 *{box-sizing:border-box;min-width:0}
 html,body{margin:0;padding:0}
@@ -252,7 +252,7 @@ h1 em{font-style:normal;color:var(--sage);font-weight:500}
   transition:transform .15s var(--ease), box-shadow .15s var(--ease), border-color .15s var(--ease);
 }
 .note-card:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
-.note-card h4{
+.note-card h3{
   font-family:var(--f-display);font-weight:600;color:var(--ink);
   font-size:16px;margin:0 0 6px;letter-spacing:-.01em;
 }
@@ -640,7 +640,7 @@ NOTES.forEach(n => {
   const el = document.createElement('article');
   el.className = 'note-card';
   el.dataset.from = n.from; el.dataset.to = n.to;
-  el.innerHTML = `<h4><span class="from">${n.from.toUpperCase()}</span> &rarr; <span class="to">${n.to.toUpperCase()}</span> &middot; ${esc(n.title)}</h4><p>${esc(n.body)}</p>`;
+  el.innerHTML = `<h3><span class="from">${n.from.toUpperCase()}</span> &rarr; <span class="to">${n.to.toUpperCase()}</span> &middot; ${esc(n.title)}</h3><p>${esc(n.body)}</p>`;
   el.addEventListener('click', () => {
     $('#selFrom').value = n.from;
     $('#selTo').value = n.to;
