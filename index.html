@@ -41,8 +41,8 @@ window.__JETTY_PH_PAGE = 'landing';
   --stone-700:#44403c;
   --white:#ffffff;
   --border:rgba(10,18,48,0.08); --border-strong:rgba(10,18,48,0.14);
-  --shadow-sm:0 1px 2px rgba(10,18,48,.04), 0 1px 3px rgba(10,18,48,.05);
-  --shadow-md:0 4px 12px rgba(10,18,48,.06), 0 16px 40px rgba(10,18,48,.07);
+  --shadow-sm:none;
+  --shadow-md:none;
   --r-sm:4px; --r-md:10px; --r-lg:16px;
   --f-display:'Outfit', system-ui, sans-serif;
   --f-body:'Nunito Sans', system-ui, sans-serif;
@@ -128,7 +128,7 @@ h1 .second{display:block;color:var(--amber-strong);font-weight:500}
   box-shadow:var(--shadow-sm);text-decoration:none;color:inherit;
   transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
 }
-.viz-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+.viz-card:hover{border-color:var(--ink)}
 .viz-card:hover .viz-card__arrow{transform:translate(3px,-3px);color:var(--amber-strong)}
 
 .viz-card__head{display:flex;justify-content:space-between;align-items:center}

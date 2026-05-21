@@ -44,8 +44,8 @@ window.__JETTY_PH_PAGE = 'viz-4-runbooks';
   --stone-700:#44403c;
   --white:#ffffff;
   --border:rgba(10,18,48,0.08); --border-strong:rgba(10,18,48,0.16);
-  --shadow-sm:0 1px 2px rgba(10,18,48,.04), 0 1px 4px rgba(10,18,48,.06);
-  --shadow-md:0 2px 6px rgba(10,18,48,.06), 0 12px 32px rgba(10,18,48,.08);
+  --shadow-sm:none;
+  --shadow-md:none;
   --add-bg:#e6f4eb; --add-text:#1f4d2e; --add-marker:#7c9885;
   --del-bg:#fce8e1; --del-text:#7a2a16; --del-marker:#d96340;
   --ctx:#fafafa;
@@ -251,7 +251,7 @@ h1 em{font-style:normal;color:var(--sage);font-weight:500}
   padding:18px 20px;cursor:pointer;
   transition:transform .15s var(--ease), box-shadow .15s var(--ease), border-color .15s var(--ease);
 }
-.note-card:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+.note-card:hover{border-color:var(--ink);border-color:var(--border-strong)}
 .note-card h3{
   font-family:var(--f-display);font-weight:600;color:var(--ink);
   font-size:16px;margin:0 0 6px;letter-spacing:-.01em;

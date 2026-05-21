@@ -37,8 +37,8 @@ window.__JETTY_PH_PAGE = 'viz-1-trajectory';
   --stone-700:#44403c;
   --white:#ffffff;
   --border:rgba(10,18,48,0.08); --border-strong:rgba(10,18,48,0.14);
-  --shadow-sm:0 1px 2px rgba(10,18,48,.04), 0 1px 3px rgba(10,18,48,.05);
-  --shadow-md:0 4px 12px rgba(10,18,48,.06), 0 16px 40px rgba(10,18,48,.07);
+  --shadow-sm:none;
+  --shadow-md:none;
   --r-sm:4px; --r-md:10px; --r-lg:16px;
   --f-display:'Outfit', system-ui, sans-serif;
   --f-body:'Nunito Sans', system-ui, sans-serif;
@@ -156,7 +156,7 @@ section.timeline{margin-top:8px}
   box-shadow:var(--shadow-sm);
   transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
 }
-.row:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+.row:hover{border-color:var(--ink);border-color:var(--border-strong)}
 .row__index{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .row__v{font-family:var(--f-display);font-weight:600;font-size:32px;color:var(--ink);line-height:1;letter-spacing:-.02em;word-break:break-word}
 .row__badge{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:3px 7px;border-radius:var(--r-sm);background:var(--bone-100);color:var(--ink-soft);border:1px solid var(--border)}
