@@ -210,9 +210,9 @@ footer.foot a:hover{color:var(--amber-strong)}
 <section class="progress-strip">
   <div>
     <div class="progress-strip__head">global progress</div>
-    <div class="progress-strip__num">64/71 trajectories</div>
+    <div class="progress-strip__num">65/71 trajectories</div>
   </div>
-  <div class="progress-strip__bar"><span style="width:90%"></span></div>
+  <div class="progress-strip__bar"><span style="width:91%"></span></div>
   <div style="text-align:right">
     <div class="progress-strip__peak">40/40<small>peak · gemini-cli</small></div>
   </div>
@@ -13846,11 +13846,11 @@ footer.foot a:hover{color:var(--amber-strong)}
           </div>
           <div class="r-panel__meta">
             <span class="r-panel__stat"><b>36/40</b> best</span>
-            <span class="r-panel__stat">8/10 rounds</span>
+            <span class="r-panel__stat">9/10 rounds</span>
           </div>
           <button class="r-panel__close" type="button" aria-label="Close">&#x2715;</button>
         </header>
-        <div class="r-strip r-strip--8">
+        <div class="r-strip r-strip--9">
             <figure class="r-frame r-frame--none">
               <div class="r-frame__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <defs>
@@ -18066,6 +18066,668 @@ footer.foot a:hover{color:var(--amber-strong)}
 </svg></div>
               <figcaption>
                 <span class="r-frame__lbl">v8</span>
+                <span class="r-frame__sc">—</span>
+              </figcaption>
+            </figure>
+            <figure class="r-frame r-frame--none">
+              <div class="r-frame__svg"><!--
+  v3: Final push for Pelican >= 9
+  Changes from v2:
+  1. POUCH: explicit rounded belly bulge at bottom (separate ellipse shape), 
+     bottom of pouch clearly droops with a belly sag shape at y=360-372
+  2. EYE: verify gold ring fully visible against dark crown background, 
+     moved even slightly higher (y=85), white sclera ring added
+  3. WING-TIPS: add light quill shaft lines AND light-colored edge trim on each feather
+     so individual feathers have visible bright edges against dark body
+  4. BEAK: lower mandible more visibly sagging (longer gular pouch attachment)
+  5. NECK: sharper S-curve with dark posterior stripe clearly contrasting
+  6. HEAD: slightly larger, more forward-tilting (riding posture)
+  7. COMPOSITION: add foot webbing clearly on pedals for unambiguous riding
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0A3080"/>
+      <stop offset="40%"  stop-color="#2870BC"/>
+      <stop offset="100%" stop-color="#7EB4D8"/>
+    </linearGradient>
+    <radialGradient id="bodyRG" cx="0.28" cy="0.20" r="0.76">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="30%"  stop-color="#F8F6F2"/>
+      <stop offset="100%" stop-color="#C0BEB6"/>
+    </radialGradient>
+    <!-- Pouch: bright amber → deep mahogany, strong gradient -->
+    <linearGradient id="pouchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFD218"/>
+      <stop offset="8%"   stop-color="#FF9A06"/>
+      <stop offset="28%"  stop-color="#E44000"/>
+      <stop offset="58%"  stop-color="#8E1E00"/>
+      <stop offset="100%" stop-color="#481000"/>
+    </linearGradient>
+    <!-- Belly bulge gradient: warm orange-brown at belly apex -->
+    <radialGradient id="pouchBellyRG" cx="0.48" cy="0.42" r="0.58">
+      <stop offset="0%"   stop-color="#FF4800" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#A02400" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#400800" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pouchHL" cx="0.20" cy="0.22" r="0.58">
+      <stop offset="0%"   stop-color="#FFE050" stop-opacity="0.55"/>
+      <stop offset="45%"  stop-color="#FF7800" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF2000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#30A8FF"/>
+      <stop offset="100%" stop-color="#042870"/>
+    </linearGradient>
+    <linearGradient id="rimGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#F8F8F8"/>
+      <stop offset="100%" stop-color="#989898"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#329016"/>
+      <stop offset="100%" stop-color="#164808"/>
+    </linearGradient>
+    <linearGradient id="wingL" x1="0.5" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#EEECEA"/>
+      <stop offset="55%"  stop-color="#CBCBCC"/>
+      <stop offset="100%" stop-color="#96969A"/>
+    </linearGradient>
+    <linearGradient id="wingR" x1="0.5" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#EEECEA"/>
+      <stop offset="55%"  stop-color="#CBCBCC"/>
+      <stop offset="100%" stop-color="#96969A"/>
+    </linearGradient>
+    <linearGradient id="beakGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#FAC62A"/>
+      <stop offset="48%"  stop-color="#E49214"/>
+      <stop offset="100%" stop-color="#CC680A"/>
+    </linearGradient>
+    <linearGradient id="legGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E29418"/>
+      <stop offset="100%" stop-color="#AE5C06"/>
+    </linearGradient>
+    <!-- Primary feather gradient: very dark charcoal -->
+    <linearGradient id="fthrDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#161614"/>
+      <stop offset="100%" stop-color="#080806"/>
+    </linearGradient>
+    <!-- Feather edge highlight: pale gray edge -->
+    <linearGradient id="fthrEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#D0D0C8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#909088" stop-opacity="0.3"/>
+    </linearGradient>
+    <!-- Quill shaft highlight -->
+    <linearGradient id="quillHi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E0E0D8" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#B8B8B0" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ========== BACKGROUND ========== -->
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <circle cx="90" cy="76" r="66" fill="#FFE640" opacity="0.13"/>
+  <circle cx="90" cy="76" r="50" fill="#FFE640" opacity="0.62"/>
+  <circle cx="90" cy="76" r="38" fill="#FFCA00"/>
+  <g stroke="#FFE850" stroke-width="3" stroke-linecap="round" opacity="0.30">
+    <line x1="90" y1="16" x2="90" y2="4"/>
+    <line x1="90" y1="136" x2="90" y2="148"/>
+    <line x1="24" y1="76" x2="10" y2="76"/>
+    <line x1="156" y1="76" x2="170" y2="76"/>
+    <line x1="42" y1="30" x2="32" y2="20"/>
+    <line x1="138" y1="122" x2="148" y2="132"/>
+    <line x1="138" y1="30" x2="148" y2="20"/>
+    <line x1="42" y1="122" x2="32" y2="132"/>
+  </g>
+
+  <!-- Clouds -->
+  <g fill="white" opacity="0.90">
+    <ellipse cx="290" cy="60" rx="86" ry="35"/>
+    <ellipse cx="348" cy="36" rx="64" ry="43"/>
+    <ellipse cx="236" cy="54" rx="50" ry="31"/>
+    <ellipse cx="321" cy="50" rx="44" ry="24"/>
+  </g>
+  <g fill="white" opacity="0.72">
+    <ellipse cx="658" cy="78" rx="74" ry="31"/>
+    <ellipse cx="708" cy="54" rx="56" ry="40"/>
+    <ellipse cx="608" cy="71" rx="48" ry="27"/>
+  </g>
+
+  <!-- Hills + Ground -->
+  <path d="M 0,464 Q 80,424 182,441 Q 282,458 382,431 Q 482,404 582,431 Q 682,458 800,444 L 800,600 L 0,600 Z"
+        fill="#2C8814" opacity="0.46"/>
+  <rect x="0" y="514" width="800" height="86" fill="url(#groundGrad)"/>
+  <rect x="0" y="504" width="800" height="24" fill="#6E6E6E"/>
+  <rect x="0" y="504" width="800" height="4"  fill="#929292"/>
+  <rect x="0" y="524" width="800" height="4"  fill="#545454"/>
+  <g fill="#D6D6D6" opacity="0.46">
+    <rect x="12"  y="510" width="70" height="5" rx="2.5"/>
+    <rect x="150" y="510" width="70" height="5" rx="2.5"/>
+    <rect x="288" y="510" width="70" height="5" rx="2.5"/>
+    <rect x="426" y="510" width="70" height="5" rx="2.5"/>
+    <rect x="564" y="510" width="70" height="5" rx="2.5"/>
+    <rect x="702" y="510" width="70" height="5" rx="2.5"/>
+  </g>
+
+  <!-- ========== BICYCLE ========== -->
+
+  <!-- REAR WHEEL -->
+  <circle cx="268" cy="504" r="94" fill="#0C0C0C" stroke="#020202" stroke-width="5"/>
+  <circle cx="268" cy="504" r="76" fill="none" stroke="url(#rimGrad)" stroke-width="18"/>
+  <circle cx="268" cy="504" r="84" fill="none" stroke="#B6B6B6" stroke-width="2"/>
+  <circle cx="268" cy="504" r="68" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <g stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round">
+    <line x1="268" y1="504" x2="268" y2="416"/>
+    <line x1="268" y1="504" x2="305" y2="419"/>
+    <line x1="268" y1="504" x2="333" y2="445"/>
+    <line x1="268" y1="504" x2="348" y2="478"/>
+    <line x1="268" y1="504" x2="348" y2="530"/>
+    <line x1="268" y1="504" x2="333" y2="562"/>
+    <line x1="268" y1="504" x2="305" y2="590"/>
+    <line x1="268" y1="504" x2="268" y2="592"/>
+    <line x1="268" y1="504" x2="231" y2="590"/>
+    <line x1="268" y1="504" x2="203" y2="562"/>
+    <line x1="268" y1="504" x2="188" y2="530"/>
+    <line x1="268" y1="504" x2="188" y2="478"/>
+    <line x1="268" y1="504" x2="203" y2="445"/>
+    <line x1="268" y1="504" x2="231" y2="419"/>
+    <line x1="268" y1="504" x2="362" y2="504"/>
+    <line x1="268" y1="504" x2="174" y2="504"/>
+  </g>
+  <circle cx="268" cy="504" r="20" fill="#383838" stroke="#7E7E7E" stroke-width="4"/>
+  <circle cx="268" cy="504" r="11" fill="#C2C2C2"/>
+  <circle cx="268" cy="504" r="5"  fill="#7E7E7E"/>
+
+  <!-- FRONT WHEEL -->
+  <circle cx="526" cy="504" r="94" fill="#0C0C0C" stroke="#020202" stroke-width="5"/>
+  <circle cx="526" cy="504" r="76" fill="none" stroke="url(#rimGrad)" stroke-width="18"/>
+  <circle cx="526" cy="504" r="84" fill="none" stroke="#B6B6B6" stroke-width="2"/>
+  <circle cx="526" cy="504" r="68" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <g stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round">
+    <line x1="526" y1="504" x2="526" y2="416"/>
+    <line x1="526" y1="504" x2="563" y2="419"/>
+    <line x1="526" y1="504" x2="591" y2="445"/>
+    <line x1="526" y1="504" x2="606" y2="478"/>
+    <line x1="526" y1="504" x2="606" y2="530"/>
+    <line x1="526" y1="504" x2="591" y2="562"/>
+    <line x1="526" y1="504" x2="563" y2="590"/>
+    <line x1="526" y1="504" x2="526" y2="592"/>
+    <line x1="526" y1="504" x2="489" y2="590"/>
+    <line x1="526" y1="504" x2="461" y2="562"/>
+    <line x1="526" y1="504" x2="446" y2="530"/>
+    <line x1="526" y1="504" x2="446" y2="478"/>
+    <line x1="526" y1="504" x2="461" y2="445"/>
+    <line x1="526" y1="504" x2="489" y2="419"/>
+    <line x1="526" y1="504" x2="620" y2="504"/>
+    <line x1="526" y1="504" x2="432" y2="504"/>
+  </g>
+  <circle cx="526" cy="504" r="20" fill="#383838" stroke="#7E7E7E" stroke-width="4"/>
+  <circle cx="526" cy="504" r="11" fill="#C2C2C2"/>
+  <circle cx="526" cy="504" r="5"  fill="#7E7E7E"/>
+
+  <!-- FRAME -->
+  <line x1="397" y1="461" x2="268" y2="504" stroke="url(#frameGrad)" stroke-width="15" stroke-linecap="round"/>
+  <line x1="397" y1="461" x2="358" y2="335" stroke="url(#frameGrad)" stroke-width="15" stroke-linecap="round"/>
+  <line x1="397" y1="461" x2="518" y2="351" stroke="url(#frameGrad)" stroke-width="14" stroke-linecap="round"/>
+  <line x1="358" y1="335" x2="512" y2="321" stroke="url(#frameGrad)" stroke-width="13" stroke-linecap="round"/>
+  <line x1="358" y1="335" x2="268" y2="504" stroke="url(#frameGrad)" stroke-width="11" stroke-linecap="round"/>
+  <line x1="518" y1="351" x2="526" y2="504" stroke="url(#frameGrad)" stroke-width="12" stroke-linecap="round"/>
+  <rect x="508" y="315" width="20" height="46" rx="10" fill="#0A3882" stroke="#052062" stroke-width="3"/>
+  <line x1="397" y1="461" x2="358" y2="335" stroke="#8CCCFF" stroke-width="5"   stroke-linecap="round" opacity="0.25"/>
+  <line x1="358" y1="335" x2="512" y2="321" stroke="#8CCCFF" stroke-width="4"   stroke-linecap="round" opacity="0.25"/>
+  <line x1="397" y1="461" x2="518" y2="351" stroke="#8CCCFF" stroke-width="3.5" stroke-linecap="round" opacity="0.18"/>
+
+  <!-- SEAT POST -->
+  <line x1="363" y1="337" x2="360" y2="281" stroke="#222222" stroke-width="14" stroke-linecap="round"/>
+  <rect x="353" y="331" width="20" height="12" rx="5" fill="#363636" stroke="#5E5E5E" stroke-width="2"/>
+
+  <!-- SADDLE -->
+  <path d="M 322,301 C 334,283 360,275 386,277 C 411,279 427,290 426,303
+           C 420,313 402,317 378,316 C 354,315 322,310 322,301 Z"
+        fill="#121212" stroke="#383838" stroke-width="4"/>
+  <path d="M 422,303 C 436,298 449,301 447,311 C 445,320 431,318 425,312 Z"
+        fill="#1C1C1C" stroke="#383838" stroke-width="2"/>
+  <path d="M 338,295 C 358,285 383,283 411,287"
+        fill="none" stroke="#545454" stroke-width="4" opacity="0.46" stroke-linecap="round"/>
+
+  <!-- HANDLEBARS -->
+  <line x1="512" y1="321" x2="510" y2="265" stroke="#1A1A1A" stroke-width="13" stroke-linecap="round"/>
+  <rect x="500" y="259" width="20" height="18" rx="5" fill="#242424" stroke="#505050" stroke-width="2"/>
+  <line x1="451" y1="267" x2="571" y2="267" stroke="#242424" stroke-width="13" stroke-linecap="round"/>
+  <path d="M 451,267 Q 443,289 450,314" fill="none" stroke="#242424" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 571,267 Q 579,289 572,314" fill="none" stroke="#242424" stroke-width="12" stroke-linecap="round"/>
+  <rect x="439" y="303" width="28" height="26" rx="11" fill="#040404" stroke="#484848" stroke-width="2.5"/>
+  <line x1="443" y1="308" x2="466" y2="308" stroke="#262626" stroke-width="1.8"/>
+  <line x1="443" y1="314" x2="466" y2="314" stroke="#262626" stroke-width="1.8"/>
+  <line x1="443" y1="320" x2="466" y2="320" stroke="#262626" stroke-width="1.8"/>
+  <rect x="544" y="303" width="28" height="26" rx="11" fill="#040404" stroke="#484848" stroke-width="2.5"/>
+  <line x1="548" y1="308" x2="571" y2="308" stroke="#262626" stroke-width="1.8"/>
+  <line x1="548" y1="314" x2="571" y2="314" stroke="#262626" stroke-width="1.8"/>
+  <line x1="548" y1="320" x2="571" y2="320" stroke="#262626" stroke-width="1.8"/>
+  <circle cx="476" cy="267" r="12" fill="#DADADA" stroke="#A0A0A0" stroke-width="2.5"/>
+  <circle cx="476" cy="267" r="7" fill="#B8B8B8"/>
+  <circle cx="476" cy="267" r="3" fill="#949494"/>
+
+  <!-- CHAINRING -->
+  <circle cx="397" cy="461" r="38" fill="none" stroke="#BABABA" stroke-width="11"/>
+  <circle cx="397" cy="461" r="42" fill="none" stroke="#A0A0A0" stroke-width="2.5" stroke-dasharray="7,3.5"/>
+  <circle cx="397" cy="461" r="16" fill="#565656" stroke="#383838" stroke-width="3"/>
+  <path d="M 435,461 Q 398,481 344,498 Q 310,504 268,504"
+        fill="none" stroke="#3C3C3C" stroke-width="6.5" opacity="0.58"/>
+
+  <!-- CRANKS + PEDALS -->
+  <line x1="397" y1="461" x2="433" y2="497" stroke="#0A0A0A" stroke-width="14" stroke-linecap="round"/>
+  <line x1="397" y1="461" x2="361" y2="425" stroke="#0A0A0A" stroke-width="14" stroke-linecap="round"/>
+  <rect x="421" y="491" width="50" height="17" rx="5" fill="#060606" stroke="#565656" stroke-width="2.5"/>
+  <line x1="431" y1="491" x2="431" y2="508" stroke="#2A2A2A" stroke-width="2"/>
+  <line x1="444" y1="491" x2="444" y2="508" stroke="#2A2A2A" stroke-width="2"/>
+  <line x1="457" y1="491" x2="457" y2="508" stroke="#2A2A2A" stroke-width="2"/>
+  <rect x="349" y="416" width="50" height="17" rx="5" fill="#060606" stroke="#565656" stroke-width="2.5"/>
+  <line x1="360" y1="416" x2="360" y2="433" stroke="#2A2A2A" stroke-width="2"/>
+  <line x1="373" y1="416" x2="373" y2="433" stroke="#2A2A2A" stroke-width="2"/>
+  <line x1="386" y1="416" x2="386" y2="433" stroke="#2A2A2A" stroke-width="2"/>
+
+  <!-- ========== PELICAN ========== -->
+
+  <!-- TAIL FEATHERS -->
+  <path d="M 316,312 C 315,362 341,410 390,418 C 439,410 465,362 464,312
+           C 446,318 418,323 390,323 C 362,323 336,318 316,312 Z"
+        fill="#C0C0B2" stroke="#A0A09E" stroke-width="2.5" opacity="0.84"/>
+  <g stroke="#A8A8A4" stroke-width="2.2" fill="none" opacity="0.74">
+    <line x1="327" y1="320" x2="317" y2="374"/>
+    <line x1="344" y1="323" x2="334" y2="380"/>
+    <line x1="362" y1="326" x2="356" y2="386"/>
+    <line x1="380" y1="327" x2="378" y2="390"/>
+    <line x1="398" y1="326" x2="400" y2="388"/>
+    <line x1="416" y1="322" x2="428" y2="380"/>
+    <line x1="434" y1="316" x2="450" y2="370"/>
+    <line x1="453" y1="310" x2="465" y2="360"/>
+  </g>
+
+  <!-- ===== LEFT WING ===== -->
+  <path d="M 323,172 C 244,118 196,178 210,264 C 220,344 286,364 326,319
+           C 295,280 286,224 323,172 Z"
+        fill="url(#wingL)" stroke="#808080" stroke-width="5"/>
+  <!-- Covert rows -->
+  <path d="M 220,208 C 248,230 282,236 310,225" fill="none" stroke="#919190" stroke-width="2.5" opacity="0.58"/>
+  <path d="M 216,230 C 246,254 282,262 312,251" fill="none" stroke="#8B8B8A" stroke-width="2.5" opacity="0.62"/>
+  <path d="M 214,252 C 244,277 280,284 310,272" fill="none" stroke="#878782" stroke-width="2.5" opacity="0.62"/>
+  <path d="M 216,274 C 246,294 278,299 304,290" fill="none" stroke="#838380" stroke-width="2.2" opacity="0.54"/>
+  <path d="M 218,294 C 248,311 276,315 300,306" fill="none" stroke="#7F7F78" stroke-width="2.0" opacity="0.48"/>
+
+  <!-- LEFT PRIMARY FEATHERS — 8 crisp fingers with light edge trim -->
+  <!-- Shadow -->
+  <path d="M 198,260 C 176,300 174,358 203,380 C 228,400 295,382 325,354
+           C 304,331 283,311 263,295 C 246,286 224,271 198,260 Z"
+        fill="#080808" opacity="0.26"/>
+
+  <!-- Each feather: dark fill + light leading edge + bright quill shaft -->
+  <!-- F1 — outermost -->
+  <path d="M 201,266 C 177,295 170,340 191,368 C 199,382 220,385 230,372 C 222,351 213,318 201,266 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <!-- Light edge -->
+  <path d="M 201,266 C 177,295 170,340 191,368" fill="none" stroke="#C8C8C0" stroke-width="3.5" opacity="0.70" stroke-linecap="round"/>
+  <line x1="204" y1="268" x2="194" y2="371" stroke="url(#quillHi)" stroke-width="3" opacity="0.82"/>
+  <path d="M 191,368 C 184,380 178,384 179,377 C 181,369 188,365 194,369" fill="none" stroke="#1A1A18" stroke-width="2.2"/>
+
+  <!-- F2 -->
+  <path d="M 218,275 C 198,305 194,350 215,376 C 224,389 244,390 250,379 C 243,358 233,326 218,275 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 218,275 C 198,305 194,350 215,376" fill="none" stroke="#C8C8C0" stroke-width="3.5" opacity="0.68" stroke-linecap="round"/>
+  <line x1="220" y1="277" x2="214" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.82"/>
+  <path d="M 215,376 C 208,388 203,392 204,385 C 206,377 212,373 218,377" fill="none" stroke="#1A1A18" stroke-width="2.2"/>
+
+  <!-- F3 -->
+  <path d="M 238,285 C 221,312 218,352 240,378 C 248,390 266,390 272,379 C 264,359 254,329 238,285 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 238,285 C 221,312 218,352 240,378" fill="none" stroke="#C4C4BC" stroke-width="3.5" opacity="0.66" stroke-linecap="round"/>
+  <line x1="240" y1="287" x2="241" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.80"/>
+
+  <!-- F4 -->
+  <path d="M 260,293 C 246,320 244,356 266,379 C 274,389 291,388 294,377 C 286,359 277,332 260,293 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 260,293 C 246,320 244,356 266,379" fill="none" stroke="#C4C4BC" stroke-width="3.5" opacity="0.64" stroke-linecap="round"/>
+  <line x1="262" y1="295" x2="266" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.78"/>
+
+  <!-- F5 -->
+  <path d="M 283,300 C 270,327 269,362 288,381 C 296,391 311,389 314,379 C 306,362 296,336 283,300 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 283,300 C 270,327 269,362 288,381" fill="none" stroke="#C0C0B8" stroke-width="3.5" opacity="0.62" stroke-linecap="round"/>
+  <line x1="285" y1="302" x2="288" y2="380" stroke="url(#quillHi)" stroke-width="3" opacity="0.76"/>
+
+  <!-- F6 -->
+  <path d="M 304,304 C 293,329 294,362 311,380 C 319,389 333,387 336,377 C 328,360 319,335 304,304 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 304,304 C 293,329 294,362 311,380" fill="none" stroke="#BCBCB4" stroke-width="3.5" opacity="0.60" stroke-linecap="round"/>
+  <line x1="306" y1="306" x2="310" y2="379" stroke="url(#quillHi)" stroke-width="3" opacity="0.74"/>
+
+  <!-- F7 -->
+  <path d="M 324,307 C 316,330 318,360 334,377 C 342,385 355,383 358,373 C 350,356 341,334 324,307 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 324,307 C 316,330 318,360 334,377" fill="none" stroke="#B8B8B0" stroke-width="3.5" opacity="0.58" stroke-linecap="round"/>
+  <line x1="326" y1="309" x2="332" y2="374" stroke="url(#quillHi)" stroke-width="3" opacity="0.72"/>
+
+  <!-- F8 innermost -->
+  <path d="M 343,310 C 336,331 338,358 352,372 C 360,379 370,377 372,368 C 365,352 358,331 343,310 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 343,310 C 336,331 338,358 352,372" fill="none" stroke="#B4B4AC" stroke-width="3.5" opacity="0.56" stroke-linecap="round"/>
+  <line x1="345" y1="312" x2="348" y2="369" stroke="url(#quillHi)" stroke-width="3" opacity="0.70"/>
+
+  <!-- Left wing arm to handlebar -->
+  <path d="M 216,346 C 251,368 297,377 347,364 C 391,353 430,334 451,318 L 460,311"
+        fill="none" stroke="#0A0A08" stroke-width="25" stroke-linecap="round"/>
+  <path d="M 220,348 C 255,368 301,375 351,362 C 395,351 432,332 451,316"
+        fill="none" stroke="#282826" stroke-width="8" stroke-linecap="round" opacity="0.42"/>
+  <!-- Left wrist feathers -->
+  <path d="M 435,297 C 451,284 477,290 481,306 C 484,321 472,335 456,334 C 441,333 432,320 436,305 Z"
+        fill="#060604" stroke="#181816" stroke-width="4.5"/>
+  <path d="M 436,295 C 446,280 465,276 475,288" fill="none" stroke="#2A2A28" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 434,304 C 445,291 462,288 471,300" fill="none" stroke="#242422" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M 436,314 C 448,305 463,303 470,313" fill="none" stroke="#202020" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M 441,324 C 452,317 465,316 471,326" fill="none" stroke="#1C1C1A" stroke-width="2.0" stroke-linecap="round"/>
+
+  <!-- ===== RIGHT WING (far side) ===== -->
+  <path d="M 457,172 C 537,118 585,178 571,264 C 559,344 494,364 454,319
+           C 484,280 493,224 457,172 Z"
+        fill="url(#wingR)" stroke="#808080" stroke-width="5" opacity="0.84"/>
+  <path d="M 562,208 C 535,230 501,236 473,225" fill="none" stroke="#919190" stroke-width="2.5" opacity="0.58"/>
+  <path d="M 566,230 C 537,254 501,262 469,251" fill="none" stroke="#8B8B8A" stroke-width="2.5" opacity="0.62"/>
+  <path d="M 568,252 C 539,277 503,284 471,272" fill="none" stroke="#878782" stroke-width="2.5" opacity="0.62"/>
+  <path d="M 566,274 C 538,294 505,299 479,290" fill="none" stroke="#838380" stroke-width="2.2" opacity="0.54"/>
+  <path d="M 563,294 C 536,311 508,315 484,306" fill="none" stroke="#7F7F78" stroke-width="2.0" opacity="0.48"/>
+
+  <!-- RIGHT PRIMARY FEATHERS (mirror) -->
+  <path d="M 581,260 C 603,300 605,358 576,380 C 551,400 484,382 454,354
+           C 475,331 496,311 515,295 C 532,286 554,271 581,260 Z"
+        fill="#080808" opacity="0.26"/>
+
+  <!-- RF1 -->
+  <path d="M 578,266 C 602,295 609,340 588,368 C 580,382 559,385 549,372 C 557,351 567,318 578,266 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 578,266 C 602,295 609,340 588,368" fill="none" stroke="#C8C8C0" stroke-width="3.5" opacity="0.70" stroke-linecap="round"/>
+  <line x1="576" y1="268" x2="585" y2="371" stroke="url(#quillHi)" stroke-width="3" opacity="0.82"/>
+  <path d="M 588,368 C 595,380 601,384 600,377 C 598,369 591,365 584,369" fill="none" stroke="#1A1A18" stroke-width="2.2"/>
+
+  <!-- RF2 -->
+  <path d="M 560,275 C 581,305 586,350 565,376 C 556,389 536,390 530,379 C 537,358 547,326 560,275 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 560,275 C 581,305 586,350 565,376" fill="none" stroke="#C8C8C0" stroke-width="3.5" opacity="0.68" stroke-linecap="round"/>
+  <line x1="558" y1="277" x2="565" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.82"/>
+  <path d="M 565,376 C 572,388 577,392 576,385 C 574,377 568,373 562,377" fill="none" stroke="#1A1A18" stroke-width="2.2"/>
+
+  <!-- RF3 -->
+  <path d="M 540,285 C 557,312 561,352 539,378 C 531,390 513,390 507,379 C 515,359 525,329 540,285 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 540,285 C 557,312 561,352 539,378" fill="none" stroke="#C4C4BC" stroke-width="3.5" opacity="0.66" stroke-linecap="round"/>
+  <line x1="538" y1="287" x2="538" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.80"/>
+
+  <!-- RF4 -->
+  <path d="M 518,293 C 532,320 534,356 513,379 C 505,389 488,388 485,377 C 493,359 502,332 518,293 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 518,293 C 532,320 534,356 513,379" fill="none" stroke="#C4C4BC" stroke-width="3.5" opacity="0.64" stroke-linecap="round"/>
+  <line x1="516" y1="295" x2="513" y2="378" stroke="url(#quillHi)" stroke-width="3" opacity="0.78"/>
+
+  <!-- RF5 -->
+  <path d="M 495,300 C 508,327 510,362 491,381 C 483,391 468,389 465,379 C 473,362 482,336 495,300 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 495,300 C 508,327 510,362 491,381" fill="none" stroke="#C0C0B8" stroke-width="3.5" opacity="0.62" stroke-linecap="round"/>
+  <line x1="493" y1="302" x2="491" y2="380" stroke="url(#quillHi)" stroke-width="3" opacity="0.76"/>
+
+  <!-- RF6 -->
+  <path d="M 474,304 C 484,329 486,362 469,380 C 461,388 448,386 447,377 C 454,360 462,335 474,304 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 474,304 C 484,329 486,362 469,380" fill="none" stroke="#BCBCB4" stroke-width="3.5" opacity="0.60" stroke-linecap="round"/>
+  <line x1="472" y1="306" x2="470" y2="379" stroke="url(#quillHi)" stroke-width="3" opacity="0.74"/>
+
+  <!-- RF7 -->
+  <path d="M 454,307 C 462,330 464,360 449,376 C 442,384 430,382 429,373 C 436,357 444,334 454,307 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 454,307 C 462,330 464,360 449,376" fill="none" stroke="#B8B8B0" stroke-width="3.5" opacity="0.58" stroke-linecap="round"/>
+  <line x1="452" y1="309" x2="450" y2="373" stroke="url(#quillHi)" stroke-width="3" opacity="0.72"/>
+
+  <!-- RF8 innermost -->
+  <path d="M 435,309 C 442,330 444,357 431,371 C 424,378 413,376 412,367 C 419,352 427,330 435,309 Z"
+        fill="url(#fthrDark)" stroke="#040402" stroke-width="2"/>
+  <path d="M 435,309 C 442,330 444,357 431,371" fill="none" stroke="#B4B4AC" stroke-width="3.5" opacity="0.56" stroke-linecap="round"/>
+  <line x1="433" y1="311" x2="432" y2="368" stroke="url(#quillHi)" stroke-width="3" opacity="0.70"/>
+
+  <!-- Right wing arm to right grip -->
+  <path d="M 565,340 C 571,356 577,351 579,340 C 580,327 576,317 572,311"
+        fill="none" stroke="#0A0A08" stroke-width="25" stroke-linecap="round"/>
+  <!-- Right wrist feathers -->
+  <path d="M 539,296 C 556,283 581,289 584,306 C 587,322 575,335 560,334 C 546,333 537,320 541,306 Z"
+        fill="#060604" stroke="#181816" stroke-width="4.5"/>
+  <path d="M 541,294 C 552,279 570,275 580,287" fill="none" stroke="#2A2A28" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 539,303 C 550,290 567,287 577,299" fill="none" stroke="#242422" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M 541,313 C 554,304 569,302 576,312" fill="none" stroke="#202020" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M 545,323 C 556,316 570,315 576,325" fill="none" stroke="#1C1C1A" stroke-width="2.0" stroke-linecap="round"/>
+
+  <!-- ===== BODY — white, dark edge ===== -->
+  <!-- Shadow halo -->
+  <ellipse cx="390" cy="226" rx="83" ry="95" fill="#8A8882" opacity="0.40"/>
+  <!-- Main body -->
+  <ellipse cx="390" cy="224" rx="77" ry="90" fill="url(#bodyRG)" stroke="#4E4C48" stroke-width="7.5"/>
+  <!-- Highlight -->
+  <path d="M 326,182 C 315,224 320,268 338,298"
+        fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" opacity="0.28"/>
+  <!-- Breast feather texture -->
+  <path d="M 334,210 C 362,227 406,231 432,220" fill="none" stroke="#D2D2CA" stroke-width="2.5" opacity="0.40"/>
+  <path d="M 332,229 C 360,246 404,251 432,240" fill="none" stroke="#CECEC6" stroke-width="2.2" opacity="0.36"/>
+  <path d="M 331,248 C 359,264 404,269 433,257" fill="none" stroke="#CACAC2" stroke-width="2.0" opacity="0.32"/>
+  <path d="M 334,266 C 360,280 404,284 431,272" fill="none" stroke="#C6C6BE" stroke-width="1.8" opacity="0.28"/>
+  <path d="M 340,285 C 364,296 402,299 426,290" fill="none" stroke="#C2C2BA" stroke-width="1.6" opacity="0.24"/>
+
+  <!-- ===== NECK — S-curve with dark posterior stripe ===== -->
+  <!-- Neck shadow -->
+  <path d="M 370,150 C 356,112 364,78 396,70 C 430,62 464,90 457,144"
+        stroke="#706E6A" stroke-width="55" stroke-linecap="round" fill="none"/>
+  <!-- Neck fill -->
+  <path d="M 372,148 C 358,110 366,78 398,70 C 430,62 462,90 455,144"
+        stroke="#EEEEE6" stroke-width="45" stroke-linecap="round" fill="none"/>
+  <!-- Neck shading -->
+  <path d="M 375,146 C 362,110 369,80 400,72 C 430,64 459,92 453,143"
+        stroke="#E0E0D8" stroke-width="33" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <!-- Neck highlight -->
+  <path d="M 379,141 C 370,115 377,93 405,86"
+        stroke="#FFFFFF" stroke-width="17" stroke-linecap="round" fill="none" opacity="0.32"/>
+  <!-- Dark posterior neck stripe (key pelican feature) -->
+  <path d="M 391,148 C 405,115 418,92 436,78"
+        stroke="#1A1208" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.55"/>
+
+  <!-- ===== HEAD ===== -->
+  <!-- Shadow -->
+  <ellipse cx="447" cy="114" rx="58" ry="53" fill="#6C6C62" opacity="0.50"/>
+  <!-- Main head — slightly larger, forward lean for riding posture -->
+  <ellipse cx="446" cy="111" rx="52" ry="48" fill="#F2F2EA" stroke="#444440" stroke-width="7"/>
+  <!-- Head shading -->
+  <path d="M 404,102 C 393,122 395,148 412,163" fill="none" stroke="#C4C4BC" stroke-width="13" opacity="0.28"/>
+  <!-- Cheek highlight -->
+  <ellipse cx="449" cy="126" rx="34" ry="25" fill="#FEFEF6" opacity="0.32"/>
+
+  <!-- ===== CROWN CAP — wide, very dark, key pelican ID ===== -->
+  <path d="M 398,82 C 407,55 425,45 446,45 C 467,45 484,55 495,78
+           C 490,92 476,100 455,102 C 435,102 417,94 404,84 Z"
+        fill="#040302" opacity="0.98"/>
+  <path d="M 398,82 C 392,96 390,112 394,124
+           C 386,118 380,106 382,92 C 384,82 390,78 398,82 Z"
+        fill="#040302" opacity="0.90"/>
+  <path d="M 495,78 C 501,92 500,108 494,120
+           C 502,114 507,102 505,88 C 503,80 499,76 495,78 Z"
+        fill="#040302" opacity="0.80"/>
+  <!-- Nape stripe -->
+  <path d="M 404,122 C 396,144 390,168 385,188"
+        stroke="#0E0802" stroke-width="19" stroke-linecap="round" fill="none" opacity="0.58"/>
+
+  <!-- Crest feathers (white plumes from top of dark crown) -->
+  <path d="M 428,46 C 422,22 432,0 442,16 C 452,0 462,22 456,46"
+        fill="#D4D4CC" stroke="#A4A4A0" stroke-width="2.5"/>
+  <path d="M 430,20 C 425,0 435,-14 442,2"   fill="none" stroke="#B8B8B0" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 439,19 C 435,0 445,-14 451,2"   fill="none" stroke="#B8B8B0" stroke-width="3.0" stroke-linecap="round" opacity="0.78"/>
+  <path d="M 449,22 C 446,3 455,-10 461,4"   fill="none" stroke="#B4B4AC" stroke-width="2.5" stroke-linecap="round" opacity="0.64"/>
+  <path d="M 422,32 C 418,15 428,3 434,16"   fill="none" stroke="#BCBCB4" stroke-width="2.0" stroke-linecap="round" opacity="0.54"/>
+
+  <!-- Yellow lores (bare facial skin) -->
+  <ellipse cx="477" cy="113" rx="22" ry="15" fill="#FFEE76" opacity="0.68"/>
+
+  <!-- ===== EYE — y=85, large gold ring for max recognition ===== -->
+  <!-- Outer shadow ring -->
+  <circle cx="463" cy="85" r="30" fill="#8C8C82" opacity="0.56"/>
+  <!-- PROMINENT GOLD ORBITAL RING — the defining pelican feature -->
+  <circle cx="463" cy="85" r="26" fill="none" stroke="#F8BE00" stroke-width="15"/>
+  <!-- White sclera show -->
+  <circle cx="463" cy="85" r="13" fill="#FFFCB4"/>
+  <!-- Dark iris -->
+  <circle cx="463" cy="85" r="9.5" fill="#060402"/>
+  <!-- Pupil -->
+  <circle cx="463" cy="85" r="6"   fill="#010100"/>
+  <!-- Main catchlight -->
+  <circle cx="468" cy="79" r="5.5" fill="white" opacity="0.98"/>
+  <!-- Secondary catchlight -->
+  <circle cx="457" cy="92" r="3"   fill="white" opacity="0.40"/>
+
+  <!-- Nostril groove on beak base -->
+  <ellipse cx="484" cy="115" rx="11" ry="5" fill="#A66608" opacity="0.88"/>
+
+  <!-- ===== BEAK — long flat pelican bill, visible lower mandible ===== -->
+  <!-- Lower jaw shadow depth -->
+  <path d="M 487,110 L 621,103 L 625,129 C 596,136 546,146 486,151 Z"
+        fill="#824806" opacity="0.38"/>
+  <!-- Lower mandible (sagging slightly for gular pouch attachment) -->
+  <path d="M 487,136 C 539,144 592,143 624,132 C 630,144 634,152 626,158 C 596,166 542,168 484,160 Z"
+        fill="#A85806" stroke="#864004" stroke-width="3" opacity="0.90"/>
+  <!-- Upper mandible — long flat wedge -->
+  <path d="M 487,96 L 617,87 L 619,112 C 591,118 542,128 484,133 Z"
+        fill="url(#beakGrad)" stroke="#A06808" stroke-width="5.5"/>
+  <!-- Culmen ridge -->
+  <line x1="489" y1="97" x2="615" y2="88" stroke="#EAB018" stroke-width="6" opacity="0.84"/>
+  <!-- Hook tip — vivid red-orange -->
+  <path d="M 613,87 C 638,80 659,93 655,115 C 651,136 627,137 623,124 L 622,108 Z"
+        fill="#CC4200" stroke="#762C00" stroke-width="4.5"/>
+  <!-- Hook highlight -->
+  <path d="M 638,92 C 650,88 656,99 652,110" fill="none" stroke="#FF7818" stroke-width="3.5" opacity="0.48" stroke-linecap="round"/>
+  <!-- Nasal groove -->
+  <path d="M 502,110 C 554,114 597,113 621,110"
+        fill="none" stroke="#C07A12" stroke-width="2.5" opacity="0.56"/>
+  <!-- Lower mandible bottom edge -->
+  <path d="M 488,160 C 540,168 592,166 624,155"
+        fill="none" stroke="#985E06" stroke-width="5.5" opacity="0.76"/>
+
+  <!-- ===== THROAT POUCH — prominent drooping belly ===== -->
+  <!-- 3D shadow volume -->
+  <path d="M 483,137
+           C 542,156 600,175 636,148
+           C 650,202 640,280 606,334
+           C 572,376 514,386 480,355
+           C 447,322 437,278 443,226
+           C 447,194 460,164 483,137 Z"
+        fill="#420C00" opacity="0.48"/>
+  <!-- Main pouch — pendulous belly droops to ~y=374 -->
+  <path d="M 484,133
+           C 543,152 600,171 636,144
+           C 649,199 639,278 605,332
+           C 571,372 513,382 479,351
+           C 445,318 435,274 441,222
+           C 445,190 458,160 484,133 Z"
+        fill="url(#pouchGrad)" stroke="#884802" stroke-width="6.5"/>
+  <!-- Highlight overlay -->
+  <path d="M 484,133
+           C 543,152 600,171 636,144
+           C 649,199 639,278 605,332
+           C 571,372 513,382 479,351
+           C 445,318 435,274 441,222
+           C 445,190 458,160 484,133 Z"
+        fill="url(#pouchHL)"/>
+  <!-- Belly glow at widest point -->
+  <ellipse cx="545" cy="252" rx="60" ry="55" fill="url(#pouchBellyRG)"/>
+  <!-- Skin wrinkle fold lines -->
+  <path d="M 499,156 C 548,173 594,174 630,161" fill="none" stroke="#CC7610" stroke-width="5" opacity="0.70"/>
+  <path d="M 497,178 C 546,196 592,198 626,185" fill="none" stroke="#B85C0A" stroke-width="4.5" opacity="0.66"/>
+  <path d="M 495,201 C 541,219 583,222 614,209" fill="none" stroke="#A44A08" stroke-width="4.0" opacity="0.62"/>
+  <path d="M 491,224 C 535,243 575,246 604,233" fill="none" stroke="#903A06" stroke-width="3.5" opacity="0.58"/>
+  <path d="M 486,248 C 529,267 567,270 595,256" fill="none" stroke="#7C2E06" stroke-width="3.2" opacity="0.53"/>
+  <path d="M 481,271 C 522,290 560,293 585,279" fill="none" stroke="#682406" stroke-width="2.8" opacity="0.48"/>
+  <path d="M 474,293 C 513,312 550,315 574,300" fill="none" stroke="#581C02" stroke-width="2.5" opacity="0.43"/>
+  <path d="M 467,314 C 505,332 541,335 565,320" fill="none" stroke="#481402" stroke-width="2.2" opacity="0.38"/>
+  <path d="M 458,334 C 494,350 530,352 556,337" fill="none" stroke="#380E00" stroke-width="2.0" opacity="0.34"/>
+  <!-- Bright amber rim highlight (shows pouch is full and taut) -->
+  <path d="M 500,151 C 550,166 594,165 630,153"
+        fill="none" stroke="#FFE858" stroke-width="11" opacity="0.36"/>
+  <!-- BELLY DROOP BOTTOM — explicit rounded bottom belly shape -->
+  <!-- Extra belly bulge that hangs at the bottom of the pouch -->
+  <ellipse cx="545" cy="368" rx="55" ry="22" fill="#5C1400" opacity="0.55"/>
+  <ellipse cx="545" cy="364" rx="50" ry="18" fill="#4C1000" opacity="0.38"/>
+  <!-- Bottom droop crease line — belly sag line  -->
+  <path d="M 454,350 C 490,370 535,374 570,360 C 583,354 594,341 597,332"
+        fill="none" stroke="#280A00" stroke-width="4" opacity="0.42"/>
+
+  <!-- ===== LEGS ===== -->
+  <!-- RIGHT LEG -->
+  <path d="M 415,306 C 424,343 436,378 440,412"
+        stroke="url(#legGrad)" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <ellipse cx="441" cy="416" rx="19" ry="18" fill="#BA6608" stroke="#CA7A0E" stroke-width="3.5"/>
+  <path d="M 442,434 C 444,460 446,477 447,498"
+        stroke="url(#legGrad)" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <!-- Right foot on down pedal — clearly webbed toes on pedal -->
+  <path d="M 428,498 C 445,485 477,484 490,498 C 488,512 464,518 448,513 Z"
+        fill="#B46608" stroke="#8A5204" stroke-width="5"/>
+  <!-- Webbed toe extensions -->
+  <path d="M 484,493 C 497,480 512,474 520,481 C 516,493 505,498 492,497"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 487,506 C 501,496 516,492 521,499 C 517,510 506,515 493,512"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 428,498 C 416,490 409,486 404,491 C 407,501 414,506 428,501"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 448,513 C 441,526 436,533 430,530 C 433,522 439,515 448,511"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <!-- Toe web membrane suggestion -->
+  <path d="M 448,500 C 466,490 484,490 492,498" fill="none" stroke="#8A5204" stroke-width="1.5" opacity="0.50"/>
+
+  <!-- LEFT LEG -->
+  <path d="M 375,306 C 375,342 372,370 370,398"
+        stroke="url(#legGrad)" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <ellipse cx="370" cy="402" rx="19" ry="18" fill="#BA6608" stroke="#CA7A0E" stroke-width="3.5"/>
+  <path d="M 370,420 C 369,436 368,449 367,458"
+        stroke="url(#legGrad)" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <!-- Left foot on upper pedal -->
+  <path d="M 345,458 C 360,445 395,441 408,457 C 406,471 382,478 365,473 Z"
+        fill="#B46608" stroke="#8A5204" stroke-width="5"/>
+  <path d="M 403,453 C 417,440 432,434 439,440 C 435,451 425,457 413,454"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 406,465 C 420,455 435,451 440,458 C 436,469 425,474 413,471"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 345,458 C 334,449 327,446 322,451 C 325,461 332,466 345,461"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <path d="M 365,473 C 358,485 353,493 347,490 C 350,482 356,474 365,471"
+        fill="#B46608" stroke="#8A5204" stroke-width="2.5"/>
+  <!-- Web membrane -->
+  <path d="M 368,461 C 384,451 401,450 408,458" fill="none" stroke="#8A5204" stroke-width="1.5" opacity="0.50"/>
+
+  <!-- ===== FINISHING TOUCHES ===== -->
+  <!-- Ground shadow -->
+  <ellipse cx="397" cy="516" rx="204" ry="14" fill="#000000" opacity="0.17"/>
+
+  <!-- Axle bolts -->
+  <circle cx="268" cy="504" r="10" fill="#E0E0E0" stroke="#A2A2A2" stroke-width="3"/>
+  <circle cx="526" cy="504" r="10" fill="#E0E0E0" stroke="#A2A2A2" stroke-width="3"/>
+
+  <!-- Water bottle cage on frame -->
+  <line x1="468" y1="380" x2="462" y2="430" stroke="#606060" stroke-width="3" opacity="0.60"/>
+  <line x1="494" y1="376" x2="496" y2="426" stroke="#606060" stroke-width="3" opacity="0.60"/>
+  <path d="M 463,394 C 465,375 476,364 488,364 C 500,364 504,374 503,394 Z"
+        fill="#1466BE" stroke="#08408A" stroke-width="1.5" opacity="0.86"/>
+  <rect x="463" y="394" width="34" height="50" rx="10"
+        fill="#1466BE" stroke="#08408A" stroke-width="1.5" opacity="0.86"/>
+  <rect x="465" y="397" width="30" height="12" rx="2" fill="#52A2FF" opacity="0.32"/>
+
+  <!-- Caption -->
+  <text x="400" y="578" font-family="Georgia, 'Times New Roman', serif" font-size="21"
+        fill="#081802" text-anchor="middle" font-style="italic" opacity="0.88" letter-spacing="1">
+    A Pelican Riding a Bicycle
+  </text>
+</svg></div>
+              <figcaption>
+                <span class="r-frame__lbl">v9</span>
                 <span class="r-frame__sc">—</span>
               </figcaption>
             </figure></div>
@@ -27647,11 +28309,11 @@ footer.foot a:hover{color:var(--amber-strong)}
 </svg></div>
         <dl class="agent__stats">
           <div><dt>best score</dt><dd class="agent__score agent__score--mid">36/40</dd></div>
-          <div><dt>completed</dt><dd>8/10</dd></div>
-          <div class="agent__stats__id"><dt>progress</dt><dd><div class="bar"><span style="width:80%"></span></div><span class="bar__lbl">8/10 rounds · still running</span></dd></div>
+          <div><dt>completed</dt><dd>9/10</dd></div>
+          <div class="agent__stats__id"><dt>progress</dt><dd><div class="bar"><span style="width:90%"></span></div><span class="bar__lbl">9/10 rounds · still running</span></dd></div>
         </dl>
         <p class="agent__blurb">Hermes routed to Sonnet via OpenRouter. Same agent as the flash & glm rows — isolates model effect.</p>
-        <div class="agent__cta">see all 8 rounds &rarr;</div>
+        <div class="agent__cta">see all 9 rounds &rarr;</div>
       </article>
       <article class="agent agent--high" data-agent="hermes-flash" tabindex="0" role="button" aria-label="Expand hermes openrouter/google/gemini-3.5-flash rounds">
         <header class="agent__head">
