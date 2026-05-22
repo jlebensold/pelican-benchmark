@@ -18,9 +18,7 @@
     }
   ],
   "redirects": [
-    { "source": "/v1", "destination": "/climb", "permanent": false },
-    { "source": "/v2", "destination": "/filmstrip", "permanent": false },
-    { "source": "/v3", "destination": "/head-to-head", "permanent": false },
-    { "source": "/v4", "destination": "/runbooks", "permanent": false }
+    { "source": "/v1", "destination": "/climb", "permanent": false },{ "source": "/v2", "destination": "/head-to-head", "permanent": false },
+    { "source": "/v3", "destination": "/runbooks", "permanent": false }
   ]
 }
