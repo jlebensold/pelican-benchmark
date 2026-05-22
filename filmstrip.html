@@ -176,6 +176,8 @@ footer.foot a:hover{color:var(--amber-strong)}
 .hc-pbtn[aria-pressed="true"]{background:var(--ink);color:var(--bone-50);border-color:var(--ink)}
 .hc-pbtn__best{margin-left:6px;color:var(--ink-dim);font-weight:600;font-size:10px}
 .hc-pbtn[aria-pressed="true"] .hc-pbtn__best{color:var(--amber)}
+
+.arrows kbd{display:inline-block;font-family:var(--f-mono);font-size:10.5px;color:var(--ink);background:var(--white);border:1px solid var(--border-strong);padding:1px 6px;border-radius:3px;margin:0 2px;box-shadow:0 1px 0 var(--border-strong)}
 </style>
 <meta name="description" content="18 frames in a focal viewer. Click any to see the SVG, the ask that produced it, and the diff from previous.">
 <meta property="og:type" content="website">
@@ -250,7 +252,7 @@ footer.foot a:hover{color:var(--amber-strong)}
 <section class="strip-wrap">
   <div class="strip-head">
     <h3 id="stripHead">The eleven frames &middot; click to switch</h3>
-    <span class="arrows">&larr; / &rarr; to step</span>
+    <span class="arrows"><kbd>&larr;</kbd><kbd>&rarr;</kbd> frames &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> agent</span>
   </div>
   <div id="stripHost"></div>
 </section>
@@ -440,6 +442,7 @@ function renderHcStrip() {
 
 function showHcFrame(frame) {
   const m = DATA.hc[currentHcAgent];
+  if (history.replaceState) history.replaceState(null, '', `#hc/${currentHcAgent}/v${frame.n}`);
   $('#focalSvg').innerHTML = frame.svg;
   $('#focalChip').textContent = `${m.label} · v${frame.n} · ${frame.score == null ? '—' : frame.score + '/40'}`;
   const isPeak = frame.score != null && frame.score >= 40;
@@ -460,16 +463,54 @@ function showHcFrame(frame) {
 $$('.series__tab').forEach(t => t.addEventListener('click', () => switchSeries(t.dataset.series)));
 
 document.addEventListener('keydown', e => {
-  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+  // Up/Down switches agent on the hill-climbs tab
+  if (currentSeries === 'hc' && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+    e.preventDefault();
+    const keys = Object.keys(DATA.hc);
+    const i = keys.indexOf(currentHcAgent);
+    const next = e.key === 'ArrowDown' ? i + 1 : i - 1;
+    if (next >= 0 && next < keys.length) {
+      currentHcAgent = keys[next];
+      document.querySelectorAll('#hcAgentBtns .hc-pbtn').forEach(b => b.setAttribute('aria-pressed', b.dataset.hcAgent === currentHcAgent));
+      renderHcStrip();
+      const m = DATA.hc[currentHcAgent];
+      const bestFrame = m.frames.reduce((acc,f) => (!acc || (f.score||0) > (acc.score||0)) ? f : acc, null);
+      if (bestFrame) showHcFrame(bestFrame);
+      if (history.replaceState) history.replaceState(null, '', `#hc/${currentHcAgent}`);
+    }
+    return;
+  }
+  // Left/Right steps through the strip
   const thumbs = $$('#stripHost .thumb');
   const cur = thumbs.findIndex(b => b.getAttribute('aria-current')==='true');
-  if (e.key === 'ArrowRight' && cur < thumbs.length-1) thumbs[cur+1].click();
-  if (e.key === 'ArrowLeft' && cur > 0) thumbs[cur-1].click();
+  if (e.key === 'ArrowRight' && cur < thumbs.length-1) { e.preventDefault(); thumbs[cur+1].click(); }
+  if (e.key === 'ArrowLeft' && cur > 0)               { e.preventDefault(); thumbs[cur-1].click(); }
 });
 
 // init
-renderStrip();
-select('iter', 'v5');
+const hash = location.hash.replace('#','');
+if (hash.startsWith('hc/')) {
+  const parts = hash.split('/');
+  const agentKey = parts[1];
+  if (DATA.hc[agentKey]) {
+    currentHcAgent = agentKey;
+    switchSeries('hc');
+    // If a specific v specified, jump to it
+    if (parts[2]) {
+      const vn = parseInt(parts[2].replace('v',''));
+      const m = DATA.hc[agentKey];
+      const f = m.frames.find(x => x.n === vn);
+      if (f) showHcFrame(f);
+    }
+  } else {
+    renderStrip();
+    select('iter', 'v5');
+  }
+} else {
+  renderStrip();
+  select('iter', 'v5');
+}
 </script>
 </body>
 </html>
