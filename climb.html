@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Climb &middot; Pelicans on a Bicycle on a Jetty</title>
-<meta name="description" content="Seven agents on the same v1 runbook, ranked by best score. Click any row to see that agent's 10-round hill climb.">
+<meta name="description" content="Nine agents on the same v1 runbook, ranked by best score. Click any row to see that agent's hill climb.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Climb &middot; Pelicans on a Bicycle on a Jetty">
-<meta property="og:description" content="Seven agents on the same v1 runbook, ranked by best score.">
-<link rel="canonical" href="https://pelicans.jetty.bot/climb">
+<meta property="og:description" content="Nine agents on the same v1 runbook, ranked by best score.">
 <meta property="og:url" content="https://pelicans.jetty.bot/climb">
 <meta property="og:image" content="https://pelicans.jetty.bot/og.png">
 <meta property="og:image:width" content="1200">
@@ -52,7 +51,7 @@ window.__JETTY_PH_PAGE = 'viz-1-trajectory';
 }
 *{box-sizing:border-box;min-width:0}
 html,body{margin:0;padding:0}
-body{background:var(--bone-50);color:var(--stone-700);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{background:var(--bone-50);color:var(--stone-700);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1480px;margin:0 auto;padding:36px 32px 64px}
 
 /* brand header */
@@ -73,7 +72,7 @@ body{background:var(--bone-50);color:var(--stone-700);font-family:var(--f-body);
 
 h1{font-family:var(--f-display);font-weight:300;font-size:clamp(40px,5.4vw,68px);line-height:1.04;color:var(--ink);letter-spacing:-.025em;margin:28px 0 8px}
 h1 em{font-style:normal;color:var(--lavender);font-weight:500}
-.lede{font-family:var(--f-display);font-weight:300;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:64ch;margin:8px 0 0}
+.lede{font-family:var(--f-display);font-weight:300;font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:64ch;margin:8px 0 0}
 .lede b{font-weight:600;color:var(--ink)}
 
 /* scatter */
@@ -167,12 +166,16 @@ footer.foot{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);
       <div class="brand__crumb">visualization 1 of 3 &middot; the climb</div>
     </div>
   </a>
-  <nav class="nav-pill"><a class="active" href="/climb">&#9312; climb</a><a href="/head-to-head">&#9313; head-to-head</a><a href="/runbooks">&#9314; runbooks</a></nav>
+  <nav class="nav-pill">
+    <a class="active" href="/climb">&#9312; climb</a>
+    <a href="/head-to-head">&#9313; head-to-head</a>
+    <a href="/runbooks">&#9314; runbooks</a>
+  </nav>
   <a href="/about" class="nav-pill-extra">about</a>
 </div>
 
 <h1>The <em>climb</em>.</h1>
-<p class="lede">Seven agents on the same v1 runbook. Same task in, very different birds out. Each row links to that agent's full 10-round hill climb.</p>
+<p class="lede">Nine agents on the same v1 runbook. Same task in, very different birds out. Each row links to that agent's full hill climb.</p>
 
 <section class="scatter-wrap">
   <header class="scatter-head">
@@ -183,7 +186,7 @@ footer.foot{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);
 </section>
 
 <header class="tbl-head">
-  <h2>Seven <em>agents</em>, ranked.</h2>
+  <h2>Nine <em>agents</em>, ranked.</h2>
   <span class="hint">click any thumb to jump to its hill climb</span>
 </header>
 
@@ -3008,6 +3011,310 @@ footer.foot{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);
         <div class="agent__blurb">Hermes routed to Sonnet via OpenRouter. Parts floated free of the bike on the initial run.</div>
       </td>
     </tr>
+    <tr data-key="opencode-fusion" data-tier="mid">
+      <td class="rank">08</td>
+      <td class="thumb"><a href="/head-to-head#opencode-fusion/v2" aria-label="view opencode hill climb"><div class="thumb__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <title>Pelican Riding a Bicycle</title>
+  <desc>A cartoon pelican seated on a bicycle saddle, wing-tip on the handlebar grip and webbed feet on the pedals.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF3F4"/>
+      <stop offset="1" stop-color="#F7F1E3"/>
+    </linearGradient>
+    <radialGradient id="body" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDE4D2"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="url(#sky)"/>
+  <ellipse cx="400" cy="500" rx="320" ry="26" fill="#BBD0B8" opacity="0.55"/>
+  <line x1="80" y1="480" x2="720" y2="480" stroke="#9DBE9A" stroke-width="2" opacity="0.5"/>
+  <ellipse cx="250" cy="486" rx="78" ry="11" fill="#6E7A6C" opacity="0.25"/>
+  <ellipse cx="560" cy="486" rx="78" ry="11" fill="#6E7A6C" opacity="0.25"/>
+
+  <!-- ================= BICYCLE (back to front) ================= -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rear wheel -->
+    <g>
+      <circle cx="250" cy="400" r="80" fill="none" stroke="#33373D" stroke-width="9"/>
+      <circle cx="250" cy="400" r="71" fill="none" stroke="#A7B0B8" stroke-width="3"/>
+      <g stroke="#A7B0B8" stroke-width="2">
+        <line x1="250" y1="400" x2="250" y2="329"/>
+        <line x1="250" y1="400" x2="321" y2="400"/>
+        <line x1="250" y1="400" x2="250" y2="471"/>
+        <line x1="250" y1="400" x2="179" y2="400"/>
+        <line x1="250" y1="400" x2="300" y2="350"/>
+        <line x1="250" y1="400" x2="300" y2="450"/>
+        <line x1="250" y1="400" x2="200" y2="450"/>
+        <line x1="250" y1="400" x2="200" y2="350"/>
+      </g>
+      <circle cx="250" cy="400" r="6" fill="#33373D"/>
+    </g>
+    <!-- Front wheel -->
+    <g>
+      <circle cx="560" cy="400" r="80" fill="none" stroke="#33373D" stroke-width="9"/>
+      <circle cx="560" cy="400" r="71" fill="none" stroke="#A7B0B8" stroke-width="3"/>
+      <g stroke="#A7B0B8" stroke-width="2">
+        <line x1="560" y1="400" x2="560" y2="329"/>
+        <line x1="560" y1="400" x2="631" y2="400"/>
+        <line x1="560" y1="400" x2="560" y2="471"/>
+        <line x1="560" y1="400" x2="489" y2="400"/>
+        <line x1="560" y1="400" x2="610" y2="350"/>
+        <line x1="560" y1="400" x2="610" y2="450"/>
+        <line x1="560" y1="400" x2="510" y2="450"/>
+        <line x1="560" y1="400" x2="510" y2="350"/>
+      </g>
+      <circle cx="560" cy="400" r="6" fill="#33373D"/>
+    </g>
+
+    <!-- Frame -->
+    <g stroke="#2A7F8E" stroke-width="10" fill="none">
+      <line x1="250" y1="400" x2="400" y2="430"/>
+      <line x1="400" y1="430" x2="360" y2="300"/>
+      <line x1="250" y1="400" x2="360" y2="300"/>
+      <line x1="400" y1="430" x2="540" y2="300"/>
+      <line x1="360" y1="300" x2="540" y2="300"/>
+    </g>
+    <!-- Fork -->
+    <line x1="540" y1="300" x2="560" y2="400" stroke="#2A7F8E" stroke-width="9"/>
+    <!-- Seat post -->
+    <line x1="360" y1="300" x2="360" y2="270" stroke="#54585E" stroke-width="8"/>
+
+    <!-- Crank + pedals -->
+    <circle cx="400" cy="430" r="13" fill="#33373D"/>
+    <line x1="400" y1="430" x2="438" y2="462" stroke="#33373D" stroke-width="6"/>
+    <line x1="400" y1="430" x2="362" y2="398" stroke="#54585E" stroke-width="6"/>
+    <rect x="424" y="458" width="34" height="10" rx="3" fill="#1F1F1F"/>
+    <rect x="346" y="392" width="32" height="9" rx="3" fill="#3A3D42"/>
+
+    <!-- Saddle -->
+    <path d="M326 268 Q360 252 402 264 Q398 280 360 280 Q334 280 326 268 Z" fill="#9C6B3F" stroke="#6B3F2A" stroke-width="2"/>
+
+    <!-- Handlebar -->
+    <path d="M540 300 L556 250 Q574 232 596 232" fill="none" stroke="#3A2A22" stroke-width="7"/>
+    <circle cx="596" cy="232" r="8" fill="#3A2A22"/>
+  </g>
+
+  <!-- ================= PELICAN ================= -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Far leg (behind) to far pedal -->
+    <path d="M352 262 L356 330 L362 392" fill="none" stroke="#D98E3A" stroke-width="9"/>
+    <path d="M344 392 L380 388 L376 404 L350 408 Z" fill="#D98E3A"/>
+
+    <!-- Body sitting on saddle -->
+    <ellipse cx="356" cy="232" rx="90" ry="70" fill="url(#body)" stroke="#D8D2C4" stroke-width="2" transform="rotate(-12 356 232)"/>
+    <path d="M300 280 Q356 312 420 268 Q392 300 348 300 Q318 298 300 280 Z" fill="#E2D8C2" opacity="0.5" transform="rotate(-12 356 232)"/>
+    <!-- tail -->
+    <path d="M274 240 Q242 248 254 270 Q278 262 292 250 Z" fill="#EDE4D2" stroke="#D8D2C4" stroke-width="2"/>
+
+    <!-- Near leg landing on near pedal -->
+    <path d="M376 286 L402 372 L436 460" fill="none" stroke="#F4A261" stroke-width="11"/>
+    <path d="M414 460 L456 452 L452 472 L422 478 Z" fill="#F4A261" stroke="#D98E3A" stroke-width="1.5"/>
+
+    <!-- Neck + head -->
+    <path d="M414 192 C436 152 452 120 486 110" fill="none" stroke="#F2E8D5" stroke-width="30"/>
+    <circle cx="498" cy="112" r="30" fill="#F2E8D5" stroke="#D8D2C4" stroke-width="1.5"/>
+
+    <!-- Beak + pouch -->
+    <path d="M518 100 L666 132 L654 146 L514 126 Z" fill="#F2B84B" stroke="#D9952E" stroke-width="1.5"/>
+    <path d="M518 124 Q566 192 630 146 L654 146 Q606 164 526 138 Z" fill="#F6CFA2" stroke="#D9952E" stroke-width="1.5"/>
+
+    <!-- Eye -->
+    <circle cx="504" cy="104" r="5.5" fill="#111111"/>
+    <circle cx="506" cy="102" r="1.8" fill="#FFFFFF"/>
+
+    <!-- Wing reaching to grip -->
+    <path d="M366 218 C436 216 526 222 596 232 C566 248 476 250 398 244 C378 238 366 232 366 218 Z" fill="#F2E8D5" stroke="#D8C7AA" stroke-width="2"/>
+    <path d="M366 218 C400 228 372 246 398 244 C378 238 366 232 366 218 Z" fill="#E4D8BE" opacity="0.6"/>
+    <path d="M524 232 L564 236 M544 240 L584 242 M566 244 L598 238" stroke="#D8C7AA" stroke-width="2" fill="none"/>
+    <!-- Wing-tip clasping the grip -->
+    <path d="M584 224 Q604 226 602 238 Q598 246 588 244 Q580 234 584 224 Z" fill="#F2E8D5" stroke="#D8C7AA" stroke-width="2"/>
+  </g>
+</svg></div></a></td>
+      <td class="score-col">
+        <div class="score score--mid">36<small>/40</small></div>
+        <div class="score__bar"><span style="width:90%"></span></div>
+      </td>
+      <td class="ax ax--high">9</td>
+      <td class="ax ax--high">9</td>
+      <td class="ax ax--high">9</td>
+      <td class="ax ax--high">9</td>
+      <td class="dur">7:08</td>
+      <td class="trj"><code>bfa3612b</code></td>
+      <td class="agent">
+        <div class="agent__label">opencode</div>
+        <div class="agent__model"><code>openrouter/fusion</code></div>
+        <div class="agent__blurb">opencode on Fusion has no image input, so it self-critiques from SVG geometry instead of the render. Climbed to 36/40 at v2.</div>
+      </td>
+    </tr>
+    <tr data-key="hermes-fusion" data-tier="low">
+      <td class="rank">09</td>
+      <td class="thumb"><a href="/head-to-head#hermes-fusion/v1" aria-label="view hermes hill climb"><div class="thumb__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bfe9ff"/>
+      <stop offset="1" stop-color="#eaf8ff"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dbe3ec"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#cfd7e1"/>
+      <stop offset="1" stop-color="#a7b1bf"/>
+    </linearGradient>
+    <linearGradient id="pouch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd062"/>
+      <stop offset="1" stop-color="#ff9c28"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#ef4b4b"/>
+      <stop offset="1" stop-color="#b51c1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#sky)"/>
+  <ellipse cx="400" cy="548" rx="372" ry="32" fill="#cfe6c8"/>
+  <line x1="20" y1="524" x2="780" y2="524" stroke="#bcd9b3" stroke-width="3"/>
+  <g opacity="0.7" fill="#ffffff">
+    <circle cx="120" cy="108" r="32"/><circle cx="153" cy="108" r="40"/><circle cx="192" cy="110" r="28"/>
+    <circle cx="660" cy="135" r="26"/><circle cx="690" cy="135" r="34"/><circle cx="722" cy="137" r="24"/>
+  </g>
+
+  <!-- ===================== BICYCLE ===================== -->
+  <g id="bicycle">
+    <g stroke="#1f1f1f" stroke-width="8" fill="none">
+      <circle cx="250" cy="430" r="92"/>
+      <circle cx="560" cy="430" r="92"/>
+    </g>
+    <g stroke="#9aa0a6" stroke-width="2">
+      <line x1="250" y1="338" x2="250" y2="522"/><line x1="158" y1="430" x2="342" y2="430"/>
+      <line x1="185" y1="365" x2="315" y2="495"/><line x1="315" y1="365" x2="185" y2="495"/>
+      <line x1="218" y1="349" x2="282" y2="511"/><line x1="282" y1="349" x2="218" y2="511"/>
+      <line x1="560" y1="338" x2="560" y2="522"/><line x1="468" y1="430" x2="652" y2="430"/>
+      <line x1="495" y1="365" x2="625" y2="495"/><line x1="625" y1="365" x2="495" y2="495"/>
+      <line x1="528" y1="349" x2="592" y2="511"/><line x1="592" y1="349" x2="528" y2="511"/>
+    </g>
+    <g stroke="#3a3d42" stroke-width="6" fill="#d9dde2">
+      <circle cx="250" cy="430" r="13"/><circle cx="560" cy="430" r="13"/>
+    </g>
+    <!-- frame -->
+    <g stroke="url(#frame)" stroke-width="13" fill="none" stroke-linecap="round">
+      <line x1="250" y1="430" x2="405" y2="430"/>
+      <line x1="405" y1="430" x2="305" y2="296"/>
+      <line x1="250" y1="430" x2="305" y2="296"/>
+      <line x1="405" y1="430" x2="548" y2="266"/>
+      <line x1="305" y1="296" x2="548" y2="266"/>
+      <line x1="548" y1="266" x2="560" y2="430"/>
+    </g>
+    <!-- handlebars: stem then grip rises to the right -->
+    <g stroke="#2b2b2b" stroke-width="9" fill="none" stroke-linecap="round">
+      <line x1="548" y1="266" x2="566" y2="248"/>
+      <line x1="566" y1="248" x2="606" y2="240"/>
+    </g>
+    <circle cx="608" cy="240" r="10" fill="#1e1e1e"/>
+    <!-- crank + pedals -->
+    <circle cx="405" cy="430" r="22" fill="#8a8a8a" stroke="#333" stroke-width="4"/>
+    <circle cx="405" cy="430" r="9" fill="#c0c0c0"/>
+    <line x1="405" y1="430" x2="370" y2="476" stroke="#2b2b2b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="405" y1="430" x2="440" y2="384" stroke="#2b2b2b" stroke-width="8" stroke-linecap="round"/>
+    <rect x="352" y="473" width="38" height="12" rx="3" fill="#1e1e1e"/>
+    <rect x="422" y="378" width="38" height="12" rx="3" fill="#1e1e1e"/>
+    <!-- saddle: peeks out behind & under body -->
+    <path d="M262 294 Q305 278 348 296 Q352 303 345 308 Q305 298 268 304 Q258 301 262 294 Z" fill="#3a2a1a"/>
+    <line x1="305" y1="306" x2="305" y2="296" stroke="#3a2a1a" stroke-width="6"/>
+  </g>
+
+  <!-- ===================== PELICAN ===================== -->
+  <g id="pelican">
+    <!-- tail -->
+    <path d="M250 282 Q200 268 182 306 Q228 300 260 298 Z" fill="#c1c9d4" stroke="#9aa6b2" stroke-width="2"/>
+
+    <!-- BODY: plump, straddling saddle (saddle pokes out front & back) -->
+    <path d="M256 292
+             Q246 218 320 206
+             Q406 198 440 246
+             Q464 288 436 320
+             Q360 344 296 334
+             Q262 324 256 292 Z" fill="url(#body)" stroke="#8c98a6" stroke-width="3"/>
+    <path d="M296 330 Q360 340 430 318" stroke="#cfd7e1" stroke-width="3" fill="none"/>
+
+    <!-- NECK: thick S-curve up to head -->
+    <path d="M432 250
+             Q470 210 466 168
+             Q462 138 432 134
+             Q414 134 410 152
+             Q436 168 432 200
+             Q426 230 402 250 Z" fill="url(#body)" stroke="#8c98a6" stroke-width="3"/>
+
+    <!-- HEAD -->
+    <circle cx="438" cy="150" r="36" fill="url(#body)" stroke="#8c98a6" stroke-width="3"/>
+    <path d="M414 122 Q420 104 434 116" stroke="#8c98a6" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="454" cy="142" r="6.5" fill="#161616"/>
+    <circle cx="456.5" cy="139.5" r="2.2" fill="#fff"/>
+    <!-- UPPER BEAK (long, tapered, slightly down) -->
+    <path d="M468 140 Q552 130 600 156 Q586 162 560 160 Q514 158 470 162 Z" fill="url(#pouch)" stroke="#d98715" stroke-width="2"/>
+    <!-- LOWER BEAK + big throat POUCH -->
+    <path d="M470 162 Q524 188 588 160 Q572 214 506 218 Q466 214 456 188 Q454 170 470 162 Z" fill="url(#pouch)" stroke="#d98715" stroke-width="2"/>
+    <path d="M474 176 Q522 198 572 172" stroke="#e6892a" stroke-width="2" fill="none"/>
+    <path d="M480 192 Q518 206 556 190" stroke="#e6892a" stroke-width="1.5" fill="none"/>
+
+    <!-- FOLDED WING on the body (teardrop, tapering to a point at the rear) -->
+    <path d="M286 248
+             Q352 232 404 252
+             Q426 264 418 286
+             Q372 310 318 304
+             Q282 298 272 274
+             Q270 256 286 248 Z" fill="url(#wing)" stroke="#7f8b99" stroke-width="3"/>
+    <g stroke="#8c98a6" stroke-width="2" fill="none">
+      <path d="M300 262 Q352 256 400 264"/>
+      <path d="M298 276 Q350 272 398 280"/>
+      <path d="M304 290 Q348 290 388 294"/>
+    </g>
+
+    <!-- REACHING ARM: from shoulder, forward & up to the grip (clear L-bend = leaning to bars) -->
+    <path d="M414 256
+             Q470 250 524 246
+             Q576 242 610 240
+             Q624 240 624 252
+             Q622 266 604 266
+             Q548 266 506 270
+             Q458 278 416 280
+             Q400 268 414 256 Z" fill="url(#wing)" stroke="#7f8b99" stroke-width="3"/>
+    <g stroke="#8c98a6" stroke-width="1.6" fill="none">
+      <path d="M440 258 Q510 252 592 252"/>
+      <path d="M438 270 Q506 266 580 264"/>
+    </g>
+    <!-- HAND: solid mass wrapping grip at (608,240) -->
+    <ellipse cx="606" cy="246" rx="22" ry="18" fill="#cfd7e1" stroke="#7f8b99" stroke-width="2"/>
+    <path d="M598 232 Q616 240 608 258" stroke="#7f8b99" stroke-width="2.5" fill="none"/>
+    <path d="M608 232 Q624 240 616 256" stroke="#7f8b99" stroke-width="2.5" fill="none"/>
+
+    <!-- LEGS to pedals -->
+    <path d="M326 326 Q348 404 370 470" stroke="#f2a93b" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M355 471 L390 473 M370 469 L374 486" stroke="#e8902a" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M390 328 Q424 356 440 382" stroke="#e8902a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M426 381 L460 383 M440 381 L444 396" stroke="#d98715" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+</svg></div></a></td>
+      <td class="score-col">
+        <div class="score score--low">34<small>/40</small></div>
+        <div class="score__bar"><span style="width:85%"></span></div>
+      </td>
+      <td class="ax">8</td>
+      <td class="ax">8</td>
+      <td class="ax ax--peak">10</td>
+      <td class="ax">8</td>
+      <td class="dur">13:53</td>
+      <td class="trj"><code>2d0c10c4</code></td>
+      <td class="agent">
+        <div class="agent__label">hermes</div>
+        <div class="agent__model"><code>openrouter/fusion</code></div>
+        <div class="agent__blurb">Hermes on OpenRouter's Fusion auto-router (routes to a frontier model per call). 3-round sweep; plateaued at 34/40.</div>
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>
@@ -3016,13 +3323,13 @@ footer.foot{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);
 
 <footer class="foot">
   <div class="foot__line"><b>Inspired by</b> <a href="https://simonwillison.net/tags/pelican-riding-a-bicycle/" target="_blank" rel="noopener">Simon Willison&rsquo;s pelican-riding-a-bicycle</a> benchmark.</div>
-  <div class="foot__line">7 agents &middot; 71 trajectories &middot; <a href="https://flows.jetty.io/jettyio/pelican-bicycle-svg" target="_blank">open task in flows.jetty.io &#x2197;</a></div>
+  <div class="foot__line">9 agents &middot; 77 trajectories &middot; <a href="https://flows.jetty.io/jettyio/pelican-bicycle-svg" target="_blank">open task in flows.jetty.io &#x2197;</a></div>
 </footer>
 
 </div>
 
 <script>
-const SCATTER = [{"x": 2.95, "y": 40.0, "label": "gemini-cli \u00b7 gemini-3.5-flash", "key": "gemini-cli", "tier": "peak"}, {"x": 3.97, "y": 40.0, "label": "opencode \u00b7 gemini-3.5-flash", "key": "opencode", "tier": "peak"}, {"x": 4.3, "y": 39.5, "label": "hermes \u00b7 gemini-3.5-flash", "key": "hermes-flash", "tier": "high"}, {"x": 6.88, "y": 37.0, "label": "claude-code \u00b7 claude-sonnet-4-6", "key": "claude-sonnet", "tier": "mid"}, {"x": 5.57, "y": 36.5, "label": "hermes \u00b7 glm-5.1", "key": "hermes-glm51", "tier": "mid"}, {"x": 5.03, "y": 36.0, "label": "claude-code \u00b7 claude-opus-4-7", "key": "claude-opus", "tier": "mid"}, {"x": 5.1, "y": 36.0, "label": "hermes \u00b7 claude-sonnet-4.6", "key": "hermes-sonnet", "tier": "mid"}];
+const SCATTER = [{"x": 2.95, "y": 40.0, "label": "gemini-cli \u00b7 gemini-3.5-flash", "key": "gemini-cli", "tier": "peak"}, {"x": 3.97, "y": 40.0, "label": "opencode \u00b7 gemini-3.5-flash", "key": "opencode", "tier": "peak"}, {"x": 4.3, "y": 39.5, "label": "hermes \u00b7 gemini-3.5-flash", "key": "hermes-flash", "tier": "high"}, {"x": 6.88, "y": 37.0, "label": "claude-code \u00b7 claude-sonnet-4-6", "key": "claude-sonnet", "tier": "mid"}, {"x": 5.57, "y": 36.5, "label": "hermes \u00b7 glm-5.1", "key": "hermes-glm51", "tier": "mid"}, {"x": 5.03, "y": 36.0, "label": "claude-code \u00b7 claude-opus-4-7", "key": "claude-opus", "tier": "mid"}, {"x": 5.1, "y": 36.0, "label": "hermes \u00b7 claude-sonnet-4.6", "key": "hermes-sonnet", "tier": "mid"}, {"x": 7.14, "y": 36.0, "label": "opencode \u00b7 fusion", "key": "opencode-fusion", "tier": "mid"}, {"x": 13.89, "y": 34.0, "label": "hermes \u00b7 fusion", "key": "hermes-fusion", "tier": "low"}];
 const INK='#0a1230', INK_DIM='#5e6584', AMBER='#f0a91f', LAV='#7c5fd9', STONE='#44403c';
 const tierColor = t => t==='peak' ? LAV : t==='high' ? AMBER : t==='mid' ? INK : STONE;
 
